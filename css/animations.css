@@ -68,6 +68,12 @@
 }
 .wallpaper,
 .picture-shadow,
+.picture-image {
+  opacity: 0;
+}
+
+.wallpaper,
+.picture-shadow,
 .picture-image,
 .name,
 .job,
@@ -92,38 +98,36 @@
 }
 
 .wallpaper {
-  animation-name: zoomOut;
   animation-timing-function: ease-out;
 }
 
-.picture-shadow {
-  animation-name: picShadow;
-  animation-delay: 500ms;
+.wallpaper.is-loaded {
+  animation-delay: 1000ms;
+  animation-name: zoomOut;
 }
 
-.picture-image {
+.picture.is-loaded .picture-shadow {
+  animation-name: picShadow;
+}
+
+.picture.is-loaded .picture-image {
   animation-name: picImage;
-  animation-delay: 500ms;
 }
 
 .name {
   animation-name: slideDown;
-  animation-delay: 100ms;
 }
 
 .job {
   animation-name: slideUp;
-  animation-delay: 200ms;
 }
 
 .hr {
   animation-name: fillUp;
-  animation-delay: 300ms;
 }
 
 .description {
   animation-name: slideUp;
-  animation-delay: 400ms;
 }
 
 .social li {

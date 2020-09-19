@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="./css/minireset.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/animations.css">
+    <script defer src="./js/index.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     <title>Tianyang Guan</title>
 </head>
 
 <body>
-    <div class="wallpaper"></div>
+    <div id="wallpaper" class="wallpaper" data-image="./img/wallpaper.jpg"></div>
     <div class="content">
         <aside class="side">
-            <figure class="picture">
+            <figure id="picture" class="picture">
                 <div class="picture-shadow"></div>
-                <img id="pictureImage" class="picture-image" src="./img/protrait_1.png" alt="Protrait of Tianyang Guan"
-                    width="320" height="320">
+                <img id="pictureImage" class="picture-image" src="./img/protrait_1.png"
+                    data-image="./img/protrait_1.png" alt="Protrait of Tianyang Guan" width="320" height="320">
             </figure>
         </aside>
         <main class="about">
