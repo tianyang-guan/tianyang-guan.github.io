@@ -1,0 +1,227 @@
+$backgound_color:#69c0ff;
+html{
+    background-color:$backgound_color;
+    background-image: linear-gradient(to bottom right, $backgound_color, #b7eb8f);
+    color: #fff;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    min-height: 100vh;
+    min-width: 300px;
+    overflow-x: hidden;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+a{
+    color: currentColor;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.wallpaper{
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.wallpaper{
+    background-image: url("../img/wallpaper.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+    position: fixed;
+}
+
+.content{
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+}
+
+.side{
+    max-height: 20rem;
+    max-width: 20rem;
+}
+
+.about{
+    max-width: 26rem;
+}
+
+@media screen and (max-width: 799px){
+    .content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 3rem;
+    }
+
+    .side{
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .content{
+        align-items: center;
+        justify-content: space-around;
+        justify-content: space-evenly;
+        padding: 4rem;
+    }
+
+    .side{
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 20rem;
+        margin-left: 4rem;
+        order: 2;
+        width: 20rem;
+    }
+
+    .about{
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
+
+.wallpaper,
+.picture-shadow,
+.picture-image{
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform-origin: center;
+}
+
+.picture{
+    padding-top: 100%;
+    position: relative;
+    width: 100%;
+    transition-duration: 500ms;
+    &:hover{
+        // transform: translateY(-20px);
+        transform: rotateX(-30deg) rotateZ(30deg) rotateY(20deg) translateX(0px)
+        translateY(20px) translateZ(-20px);
+        transition-duration: 500ms;
+    }
+}
+
+.picture-shadow{
+    border-radius: 290486px;
+    box-shadow: -4px -4px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0%;
+}
+
+.picture-image{
+    border-radius: 290486px;
+    position: absolute;
+    // background-color: $backgound_color;
+    // background-image: linear-gradient(to bottom right, $backgound_color, #b7eb8f);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    
+}
+
+.name{
+    font-size: 2.25rem;
+    line-height: 1.125;
+    margin-bottom:0.5rem;
+}
+
+.job,
+.button{
+    font-family: "Montserrat", "Quicksand", sans-serif;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+
+.job{
+    color: #fff566;
+    font-size: 1.2rem;
+}
+
+.hr{
+    background-color: #fff;
+    border: 0.5px solid;
+    content: "";
+    height: 1px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    transform-origin: center left;
+    width: 10rem;
+}
+
+.description{
+    font-size:  1.5rem;
+}
+
+.contact{
+    display: inline-block;
+    margin-top: 1.5rem;
+    vertical-align: top;
+}
+
+.button,
+.social a{
+    transform-origin: center;
+    transition-duration: 500ms;
+}
+
+.button{
+    background-color: #fff;
+    border-radius: 290486px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    color: #69c0ff;
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 1;
+    padding: 1.25rem 2rem;
+    text-shadow: none;
+    transition-property: box-shadow, transform;
+    user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    &:hover{
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+        transform: scale(1.02) translateY(-4px)
+    }
+}
+
+.social{
+    display: flex;
+    margin-top: 1.5rem;
+
+    li{
+        height: 2rem;
+        margin-right: 0.5rem;
+        text-align: center;
+        width: 2rem;
+    }
+
+    a{
+        align-items: center;
+        display: flex;
+        font-size: 1.5rem;
+        height: 2rem;
+        justify-content: center;
+        opacity: 0.6;
+        transition-property: opacity, transform;
+        width: 2rem;
+        will-change: opacity, transform;
+        &:hover{
+            opacity: 1;
+            transform: scale(1.25);
+        }
+        &:active{
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+}
