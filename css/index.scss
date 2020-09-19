@@ -20,6 +20,46 @@ a{
     text-decoration: none;
 }
 
+.navbar{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.nav-list{
+    display: flex;
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    li{
+        height: 2rem;
+        margin-right: 0.5rem;
+        text-align: center;
+        width: 200px;
+    }
+
+    a{
+        align-items: center;
+        display: flex;
+        font-size: 1.5rem;
+        height: 2rem;
+        justify-content: center;
+        opacity: 1;
+        transition-property: opacity, transform;
+        width: 200px;
+        will-change: opacity, transform;
+        &:hover{
+            opacity: 1;
+            transform: scale(1.25);
+        }
+        &:active{
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+    
+}
+
 .wallpaper{
     display: block;
     height: 100%;
@@ -39,7 +79,7 @@ a{
 .content{
     display: flex;
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .side{
