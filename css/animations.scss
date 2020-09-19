@@ -93,6 +93,12 @@
     animation-fill-mode: both;
 }
 
+.nav-list li{
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+    animation-fill-mode: both;
+}
+
 .contact{
     animation-name: bounceIn;
     animation-delay: 600ms;
@@ -145,6 +151,12 @@
     animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
 }
 
+.nav-list li{
+    animation-duration: 500ms;
+    animation-name: slideUp;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+}
+
 .name{
     animation-delay: 100ms;
 }
@@ -174,6 +186,24 @@
 }
 
 .social li{
+    &:nth-child(1){
+        animation-delay: 800ms;
+    }
+    &:nth-child(2){
+        animation-delay: 900ms;
+    }
+    &:nth-child(3){
+        animation-delay: 1000ms;
+    }
+    &:nth-child(4){
+        animation-delay: 1100ms;
+    }
+    &:nth-child(5){
+        animation-delay: 1200ms;
+    }
+}
+
+.nav-list li{
     &:nth-child(1){
         animation-delay: 800ms;
     }

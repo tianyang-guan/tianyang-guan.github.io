@@ -47,6 +47,7 @@ a {
   transition-property: opacity, transform;
   width: 200px;
   will-change: opacity, transform;
+  transition-duration: 500ms;
 }
 .nav-list a:hover {
   opacity: 1;
@@ -94,6 +95,12 @@ a {
     justify-content: center;
     align-items: center;
     padding: 5rem 3rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .side {
