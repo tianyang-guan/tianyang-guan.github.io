@@ -1,4 +1,9 @@
-html {
+html,
+body {
+  overflow: hidden;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
   background-color: #69c0ff;
   background-image: linear-gradient(to bottom right, #69c0ff, #b7eb8f);
   color: #fff;
@@ -11,13 +16,6 @@ html {
   min-width: 300px;
   overflow-x: hidden;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-html, body {
-  overflow: hidden;
-  margin: 0px;
-  width: 100%;
-  height: 100%;
 }
 
 a {
@@ -128,7 +126,7 @@ a {
 }
 
 .wallpaper {
-  background-image: url("../img/wallpaper.jpeg");
+  background-image: url("../../img/wallpaper.jpeg");
   background-position: center;
   background-size: cover;
   opacity: 0.2;
@@ -355,4 +353,230 @@ a {
   transform: scale(1.1);
 }
 
-/*# sourceMappingURL=index.css.map */
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fillUp {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes picImage {
+  from {
+    opacity: 0;
+    transform: scale(1.2) translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+@keyframes picShadow {
+  from {
+    opacity: 0;
+    transform: scale(1.2) translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1) translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+.wallpaper,
+.picture-shadow,
+.picture-image {
+  opacity: 0;
+}
+
+.wallpaper,
+.picture-shadow,
+.picture-image,
+.name,
+.job,
+.hr,
+.description,
+.contact,
+.social li {
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+  animation-fill-mode: both;
+}
+
+.nav-list li {
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+  animation-fill-mode: both;
+}
+
+.menu {
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+  animation-fill-mode: both;
+}
+
+.contact {
+  animation-name: bounceIn;
+  animation-delay: 600ms;
+}
+
+.picture-shadow,
+.picture-image {
+  animation-duration: 750ms;
+  animation-timing-function: cubic-bezier(0, 0.5, 0.25, 1.25);
+}
+
+.wallpaper {
+  animation-timing-function: ease-out;
+}
+
+.wallpaper.is-loaded {
+  animation-delay: 1000ms;
+  animation-name: zoomOut;
+}
+
+.picture.is-loaded .picture-shadow {
+  animation-name: picShadow;
+}
+
+.picture.is-loaded .picture-image {
+  animation-name: picImage;
+}
+
+.name {
+  animation-name: slideDown;
+}
+
+.job {
+  animation-name: slideUp;
+}
+
+.hr {
+  animation-name: fillUp;
+}
+
+.description {
+  animation-name: slideUp;
+}
+
+.social li {
+  animation-duration: 500ms;
+  animation-name: slideUp;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+}
+
+.nav-list li {
+  animation-duration: 500ms;
+  animation-name: slideUp;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+}
+
+.menu {
+  animation-duration: 500ms;
+  animation-name: slideUp;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+}
+
+.name {
+  animation-delay: 100ms;
+}
+
+.job {
+  animation-delay: 200ms;
+}
+
+.hr {
+  animation-delay: 300ms;
+}
+
+.description {
+  animation-delay: 400ms;
+}
+
+.picture-shadow {
+  animation-delay: 500ms;
+}
+
+.picture-image {
+  animation-delay: 500ms;
+}
+
+.contact {
+  animation-delay: 600ms;
+}
+
+.social li:nth-child(1) {
+  animation-delay: 800ms;
+}
+.social li:nth-child(2) {
+  animation-delay: 900ms;
+}
+.social li:nth-child(3) {
+  animation-delay: 1000ms;
+}
+.social li:nth-child(4) {
+  animation-delay: 1100ms;
+}
+.social li:nth-child(5) {
+  animation-delay: 1200ms;
+}
+
+.nav-list li:nth-child(1) {
+  animation-delay: 800ms;
+}
+.nav-list li:nth-child(2) {
+  animation-delay: 900ms;
+}
+.nav-list li:nth-child(3) {
+  animation-delay: 1000ms;
+}
+.nav-list li:nth-child(4) {
+  animation-delay: 1100ms;
+}
+.nav-list li:nth-child(5) {
+  animation-delay: 1200ms;
+}
+
+.menu {
+  animation-delay: 500ms;
+}
+
+/*# sourceMappingURL=style.css.map */
