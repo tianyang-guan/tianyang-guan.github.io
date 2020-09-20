@@ -46,7 +46,7 @@ a {
   opacity: 1;
   transition-property: opacity, transform, width, font-size;
   will-change: opacity, transform, width, font-size;
-  transition-duration: 500ms;
+  transition-duration: 450ms;
 }
 .nav-list a::after {
   content: "";
@@ -55,7 +55,7 @@ a {
   margin: auto;
   margin-top: -2px;
   width: 0rem;
-  transition-duration: 700ms;
+  transition-duration: 550ms;
   transition-timing-function: ease-in-out;
 }
 .nav-list a:hover {
@@ -252,19 +252,21 @@ a {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   color: #69c0ff;
   display: inline-block;
+  font-weight: bolder;
   font-size: 0.875rem;
   line-height: 1;
   padding: 1.25rem 2rem;
   text-shadow: none;
-  transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform, color, font-size;
   user-select: none;
   vertical-align: top;
   white-space: nowrap;
-  will-change: box-shadow, transform;
+  will-change: box-shadow, transform, color, font-size;
 }
 .button:hover {
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
-  transform: scale(1.02) translateY(-4px);
+  font-size: 0.9rem;
+  transform: translateY(-4px);
 }
 
 .social {
