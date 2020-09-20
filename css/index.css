@@ -45,7 +45,7 @@ a {
   justify-content: center;
   opacity: 1;
   transition-property: opacity, transform;
-  width: 200px;
+  flex-basis: 200px;
   will-change: opacity, transform;
   transition-duration: 500ms;
 }
@@ -89,7 +89,7 @@ a {
   max-width: 26rem;
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 599px) {
   .content {
     flex-direction: column;
     justify-content: center;
@@ -98,9 +98,32 @@ a {
   }
 
   .nav-list {
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-list li {
+    flex-basis: 200px;
+  }
+
+  .side {
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 799px) and (min-width: 600px) {
+  .content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5rem 3rem;
+  }
+
+  .nav-list {
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-list li {
+    flex-basis: 300px;
   }
 
   .side {
