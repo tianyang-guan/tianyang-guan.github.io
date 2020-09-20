@@ -13,16 +13,55 @@ html {
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+html, body {
+  overflow: hidden;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+
 a {
   color: currentColor;
   cursor: pointer;
   text-decoration: none;
 }
 
+.navheader {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 6rem;
+  position: absolute;
+  z-index: 2020;
+  background-color: rgba(255, 255, 255, 0);
+}
+
 .navbar {
   width: 100%;
   display: flex;
   position: relative;
+}
+
+.navbar__mobile {
+  display: flex;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+.navbar__mobile .menu {
+  align-items: center;
+  display: block;
+  font-size: 1.7rem;
+  height: 3rem;
+  justify-content: center;
+  opacity: 1;
+}
+.navbar__mobile .nav-list {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .nav-list {
@@ -61,6 +100,7 @@ a {
 .nav-list a:hover {
   opacity: 1;
   font-size: 2.2rem;
+  transform: translateY(-12px);
 }
 .nav-list a:hover::after {
   width: 3rem;
@@ -68,6 +108,15 @@ a {
 .nav-list a:active {
   opacity: 1;
   transform: scale(1.1);
+}
+
+.realbody {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  top: 6rem;
+  bottom: 6rem;
+  position: relative;
 }
 
 .wallpaper {
@@ -110,17 +159,16 @@ a {
   }
 
   .nav-list {
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .nav-list li {
-    flex-basis: 180px;
+    display: none;
   }
 
   .side {
     margin-bottom: 3rem;
     width: 100%;
+  }
+
+  .navbar__mobile {
+    display: flex;
   }
 }
 @media screen and (max-width: 799px) and (min-width: 600px) {
@@ -143,6 +191,10 @@ a {
     margin-bottom: 3rem;
     width: 100%;
   }
+
+  .navbar__mobile {
+    display: none;
+  }
 }
 @media screen and (min-width: 800px) {
   .content {
@@ -164,6 +216,10 @@ a {
   .about {
     flex-grow: 1;
     flex-shrink: 1;
+  }
+
+  .navbar__mobile {
+    display: none;
   }
 }
 .wallpaper,

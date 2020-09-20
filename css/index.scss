@@ -14,16 +14,57 @@ html{
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+html, body{
+    overflow: hidden;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
 a{
     color: currentColor;
     cursor: pointer;
     text-decoration: none;
 }
 
+.navheader{
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 6rem;
+    position: absolute;
+    z-index: 2020;
+    background-color: rgba(255, 255, 255, 0);
+}
+
 .navbar{
     width: 100%;
     display: flex;
     position: relative;
+    // opacity: 0.5;
+    
+}
+
+.navbar__mobile{
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: center;
+    .menu{
+        align-items: center;
+        display: block;
+        font-size: 1.7rem;
+        height: 3rem;
+        justify-content: center;
+        opacity: 1;
+    }
+    .nav-list{
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
 }
 
 .nav-list{
@@ -61,8 +102,8 @@ a{
         }
         &:hover{
             opacity: 1;
-            // transform: scale(1.2);
             font-size: 2.2rem;
+            transform: translateY(-12px);
             &::after{
                 width: 3rem;
             }
@@ -74,6 +115,17 @@ a{
     }
     
 }
+
+.realbody{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top:6rem;
+    bottom: 6rem;
+    position: relative;
+}
+
+
 
 .wallpaper{
     display: block;
@@ -115,17 +167,16 @@ a{
     }
 
     .nav-list{
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        li{
-            flex-basis: 180px;
-        }
+        display: none;
     }
 
     .side{
         margin-bottom: 3rem;
         width: 100%;
+    }
+
+    .navbar__mobile{
+        display: flex;
     }
 }
 
@@ -141,7 +192,6 @@ a{
         // flex-direction: column;
         justify-content: center;
         align-items: center;
-        // flex-wrap: wrap;
         li{
             flex-basis: 300px;
         }
@@ -150,6 +200,10 @@ a{
     .side{
         margin-bottom: 3rem;
         width: 100%;
+    }
+
+    .navbar__mobile{
+        display: none;
     }
 }
 
@@ -173,6 +227,10 @@ a{
     .about{
         flex-grow: 1;
         flex-shrink: 1;
+    }
+
+    .navbar__mobile{
+        display: none;
     }
 }
 

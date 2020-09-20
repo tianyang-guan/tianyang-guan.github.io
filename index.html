@@ -9,77 +9,95 @@
     <link rel="stylesheet" href="./css/minireset.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/animations.css">
-    <script defer src="./js/index.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script src="./js/jquery.min.js"></script>
     <title>Tianyang Guan</title>
 </head>
 
 <body>
 
     <div id="wallpaper" class="wallpaper" data-image="./img/wallpaper.jpeg"></div>
-    <header class="navbar">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Resume</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-            </li>
-        </ul>
-    </header>
-    <div class="content">
-        <aside class="side">
-            <figure id="picture" class="picture">
-                <div class="picture-shadow"></div>
-                <img id="pictureImage" class="picture-image" src="./img/protrait.png" data-image="./img/protrait.png"
-                    alt="Protrait of Tianyang Guan" width="320" height="320">
-            </figure>
-        </aside>
-        <main class="about">
-            <h1 class="name">
-                Hi, I'am Tianyang Guan
-            </h1>
-            <p class="job">
-                Full Stack Engineer
-            </p>
-            <hr class="hr">
-            <div class="description">
-                <p>
-                    I spend my time traveling the world,
-                    build cool translater and study new technology.
-                </p>
-            </div>
-            <div class="contact">
-                <a class="button" href="https://www.linkedin.com/in/tianyang-guan-cs/">
-                    Get in touch
-                </a>
-            </div>
-            <ul class="social">
-                <li>
-                    <a href="https://github.com/tianyang-guan">
-                        <i class="fab fa-github"></i>
-                    </a>
+    <div class="navheader">
+        <div class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="Home">Home</a>
                 </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/tianyang-guan-cs/">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="Resume">Resume</a>
                 </li>
-                <li>
-                    <a href="mailto:spcidealacm@gmail.com">
-                        <i class="fab fa-google"></i>
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
                 </li>
             </ul>
-        </main>
+        </div>
+
+        <div class="navbar__mobile">
+            <div class="menu">Menu</div>
+            <div class="nav-list">
+                <a class="nav-link" href="Home">Home</a>
+                <a class="nav-link" href="Resume">Resume</a>
+                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Blog</a>
+            </div>
+        </div>
     </div>
+
+    <div class="realbody">
+        <div id="Home" class="content">
+            <aside class="side">
+                <figure id="picture" class="picture">
+                    <div class="picture-shadow"></div>
+                    <img id="pictureImage" class="picture-image" src="./img/protrait.png"
+                        data-image="./img/protrait.png" alt="Protrait of Tianyang Guan" width="320" height="320">
+                </figure>
+            </aside>
+            <main class="about">
+                <h1 class="name">
+                    Hi, I'am Tianyang Guan
+                </h1>
+                <p class="job">
+                    Full Stack Engineer
+                </p>
+                <hr class="hr">
+                <div class="description">
+                    <p>
+                        I spend my time traveling the world,
+                        build cool translater and study new technology.
+                    </p>
+                </div>
+                <div class="contact">
+                    <a class="button" href="https://www.linkedin.com/in/tianyang-guan-cs/">
+                        Get in touch
+                    </a>
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="https://github.com/tianyang-guan">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/tianyang-guan-cs/">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:spcidealacm@gmail.com">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </li>
+                </ul>
+            </main>
+        </div>
+        <div id="Resume" class="content">
+
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

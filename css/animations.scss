@@ -99,6 +99,12 @@
     animation-fill-mode: both;
 }
 
+.menu{
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+    animation-fill-mode: both;
+}
+
 .contact{
     animation-name: bounceIn;
     animation-delay: 600ms;
@@ -152,6 +158,12 @@
 }
 
 .nav-list li{
+    animation-duration: 500ms;
+    animation-name: slideUp;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+}
+
+.menu{
     animation-duration: 500ms;
     animation-name: slideUp;
     animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
@@ -219,4 +231,8 @@
     &:nth-child(5){
         animation-delay: 1200ms;
     }
+}
+
+.menu{
+    animation-delay: 500ms;
 }
