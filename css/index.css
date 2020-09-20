@@ -46,7 +46,7 @@ a {
   opacity: 1;
   transition-property: opacity, transform, width, font-size;
   will-change: opacity, transform, width, font-size;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 .nav-list a::after {
   content: "";
@@ -55,7 +55,8 @@ a {
   margin: auto;
   margin-top: -2px;
   width: 0rem;
-  transition-duration: 500ms;
+  transition-duration: 700ms;
+  transition-timing-function: ease-in-out;
 }
 .nav-list a:hover {
   opacity: 1;
