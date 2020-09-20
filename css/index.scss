@@ -33,7 +33,7 @@ a{
     justify-content: center;
     // flex-wrap: wrap;
     li{
-        height: 2rem;
+        height: 3rem;
         margin-right: 0.5rem;
         text-align: center;
         width: 200px;
@@ -41,19 +41,30 @@ a{
 
     a{
         align-items: center;
-        display: flex;
-        font-size: 1.5rem;
-        height: 2rem;
+        display: block;
+        font-size: 2rem;
+        height: 3rem;
         justify-content: center;
         opacity: 1;
-        transition-property: opacity, transform;
-        // width: 200px;
-        flex-basis: 200px;
-        will-change: opacity, transform;
-        transition-duration: 500ms;
+        transition-property: opacity, transform, width, font-size;
+        will-change: opacity, transform, width, font-size;
+        transition-duration: 300ms;
+        &::after{
+            content: "";
+            display: block;
+            border-bottom: 1px solid #fff;
+            margin: auto;
+            margin-top: 2px;
+            width: 0rem;
+            transition-duration: 500ms;
+        }
         &:hover{
             opacity: 1;
-            transform: scale(1.25);
+            // transform: scale(1.2);
+            font-size: 2.5rem;
+            &::after{
+                width: 3rem;
+            }
         }
         &:active{
             opacity: 1;
