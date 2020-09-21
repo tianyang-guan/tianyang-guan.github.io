@@ -146,11 +146,13 @@
             navbar_box_shadow = $(".navbar").css("box_shadow");
             $(".navbar").removeAttr("style");
             navbar.addClass("show-list");
+            $(".nav-menu").text("MENU △");
         } else {
             mobile_menu_list.css("display", "none");
             navbar.removeClass("show-list");
             $(".navbar").css("background-color", "navbar_background_color");
             $(".navbar").css("box_shadow", "navbar_box_shadow");
+            $(".nav-menu").text("MENU ▽");
         }
     });
 
