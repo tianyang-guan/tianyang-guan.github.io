@@ -25,6 +25,7 @@ a {
     color: currentColor;
     cursor: pointer;
     text-decoration: none;
+    user-select: none;
 }
 
 .navbar {
@@ -58,6 +59,7 @@ a {
         transition-property: opacity, transform, width, font-size;
         will-change: opacity, transform, width, font-size;
         transition-duration: 250ms;
+        user-select: none;
         &::after {
             content: "";
             display: block;
