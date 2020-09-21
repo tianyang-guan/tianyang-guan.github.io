@@ -55,6 +55,27 @@ a {
         height: 3rem;
         justify-content: center;
         opacity: 1;
+        transition-property: opacity, transform, width, font-size;
+        will-change: opacity, transform, width, font-size;
+        transition-duration: 250ms;
+        &::after {
+            content: "";
+            display: block;
+            border-bottom: 1px solid #fff;
+            margin: auto;
+            margin-top: -2px;
+            width: 0rem;
+            transition-duration: 150ms;
+            transition-timing-function: ease-in-out;
+        }
+        &:active {
+            opacity: 1;
+            font-size: 2.2rem;
+            transform: translateY(-12px);
+            &::after {
+                width: 3rem;
+            }
+        }
     }
     .nav-list {
         display: none;
