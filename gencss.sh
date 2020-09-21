@@ -1,0 +1,1 @@
+sass --watch --no-source-map sass:css/gen

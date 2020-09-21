@@ -27,7 +27,7 @@ a {
     text-decoration: none;
 }
 
-.navheader {
+.navbar {
     width: 100%;
     top: 0;
     left: 0;
@@ -37,11 +37,10 @@ a {
     background-color: rgba(255, 255, 255, 0);
 }
 
-.navbar {
+.navbar__desktop{
     width: 100%;
     display: flex;
     position: relative;
-    // opacity: 0.5;
 }
 
 .navbar__mobile {

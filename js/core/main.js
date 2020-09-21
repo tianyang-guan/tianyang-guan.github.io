@@ -2,10 +2,10 @@
     "use strict"
     $(".realbody").scroll(function () {
         let scroll = $(".realbody").scrollTop();
-        let result = Math.floor(scroll / 200) / 20;
+        let result = Math.floor(scroll / 10) / 500;
         if (scroll < 800) {
-            $(".navheader").css("background-color", `rgba(255, 255, 255, ${result})`);
-            $(".navheader").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result})`);
+            $(".navbar").css("background-color", `rgba(255, 255, 255, ${result})`);
+            $(".navbar").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
         }
     });
 
