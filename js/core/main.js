@@ -38,8 +38,9 @@
 
         let scroll = $(".realbody").scrollTop();
         let result = Math.floor(scroll / 10) / 500;
+        let mobile_menu_list = $(".navbar__mobile .nav-list");
 
-        if (scroll < 800) {
+        if (scroll < 800 && mobile_menu_list.css("display") === 'none') {
             $(".navbar").css("background-color", `rgba(255, 255, 255, ${result})`);
             $(".navbar").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
         }
@@ -112,8 +113,6 @@
 
         } else {
             // 播放中
-            // let matrix3d = $(".picture").css("transform");
-            // console.log(matrix3d);
             musicPause();
         }
 
@@ -135,14 +134,29 @@
 
     }
 
+    let navbar_background_color;
+    let navbar_box_shadow;
+
+    $(".nav-menu").click(() => {
+        let mobile_menu_list = $(".navbar__mobile .nav-list");
+        let navbar = $(".navbar");
+        if (mobile_menu_list.css("display") === 'none') {
+            mobile_menu_list.css("display", "block");
+            navbar_background_color = $(".navbar").css("background-color");
+            navbar_box_shadow = $(".navbar").css("box_shadow");
+            $(".navbar").removeAttr("style");
+            navbar.addClass("show-list");
+        } else {
+            mobile_menu_list.css("display", "none");
+            navbar.removeClass("show-list");
+            $(".navbar").css("background-color", "navbar_background_color");
+            $(".navbar").css("box_shadow", "navbar_box_shadow");
+        }
+    });
+
     document.addEventListener('DOMContentLoaded', event => {
         loadImage('wallpaper');
         loadImage('pictureImage', 'picture');
-
-
-
-
-
     });
 
     audio.addEventListener('loadeddata', () => {
