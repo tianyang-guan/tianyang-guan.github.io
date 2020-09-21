@@ -37,7 +37,7 @@ a {
     background-color: rgba(255, 255, 255, 0);
 }
 
-.navbar__desktop{
+.navbar__desktop {
     width: 100%;
     display: flex;
     position: relative;
@@ -48,7 +48,7 @@ a {
     margin-top: 2rem;
     width: 100%;
     justify-content: center;
-    .menu {
+    .nav-menu {
         align-items: center;
         display: block;
         font-size: 1.7rem;
@@ -245,11 +245,14 @@ a {
     position: relative;
     width: 100%;
     transition-duration: 500ms;
-    &:hover {
-        // transform: translateY(-20px);
-        transform: rotateX(-30deg) rotateZ(30deg) rotateY(20deg) translateX(0px) translateY(20px) translateZ(-20px);
-        transition-duration: 500ms;
-    }
+}
+
+.picture-music {
+    animation: picChange 0.5s, rotation 3s linear 0.5s infinite;
+}
+
+.picture-music-back {
+    animation: picReturn 0.5s linear;
 }
 
 .picture-shadow {
