@@ -2,30 +2,55 @@
     "use strict"
 
 
-    let musicList = ["attention.mp3"];
+    let list = ["test.mp3", "attention.mp3", "shapeofyou1.mp3", "shapeofyou2.mp3", "snow.mp3", "wedonottalk.mp3", "legend.mp3"];
+    let musicList = [];
+    let history = [];
+    list.forEach(element => {
+        element = "./music/" + element;
+        musicList.push(element);
+    });
+    let audio = prepareMusic();
 
-    let audio = prepareMusic(musicList);
-    function prepareMusic(list) {
-        let musicList = [];
-        list.forEach(element => {
-            element = "./music/" + element;
-            musicList.push(element);
-        });
+    function randomNumber(start, end) {
+        return Math.floor(Math.random() * (end - start)) + start;
+    }
+
+    function chooseMusic(audio, number, inhistory = true) {
+        if (number !== undefined) {
+            number = Math.floor(number);
+            if (musicList.length <= number || number < 1) {
+                number = 0;
+            }
+        } else {
+            number = randomNumber(1, musicList.length);
+        }
+        if (number !== 0 && inhistory) {
+            history.push(number);
+        }
+
+        let tempSrc = audio.src;
+        audio.src = musicList[number];
+        // console.log(tempSrc);
+        // console.log(audio.src);
+        if (tempSrc === audio.src) {
+            console.log("choose again.")
+            chooseMusic(audio);
+        }
+    }
+
+    function prepareMusic() {
         let myAudio = new Audio();
         myAudio.preload = false;
         myAudio.controls = true;
         myAudio.hidden = true;
-
-        let src = musicList.pop();
-        myAudio.src = src;
-        musicList.unshift(src);
         myAudio.loop = false;
+
+        chooseMusic(myAudio);
+
         myAudio.addEventListener("ended", playEndedHandler, false);
 
         function playEndedHandler() {
-            src = musicList.pop();
-            myAudio.src = src;
-            musicList.unshift(src);
+            chooseMusic(myAudio);
             myAudio.play();
         }
 
@@ -60,7 +85,6 @@
 
     $(".picture").mouseenter(() => {
         replaceElement(".about");
-
     });
 
     let count = 0;
@@ -104,18 +128,71 @@
 
     }
 
+    let TimeFn = null;
+    let TimeDoubleFun = null;
+    let doubleClick = 0;
     $(".picture").click(() => {
-
-
-        if (audio.paused && count === 0) {
-            // 暂停中
-            musicPlay();
-
-        } else {
-            // 播放中
-            musicPause();
+        clearTimeout(TimeFn)
+        if (doubleClick) {
+            clearTimeout(TimeDoubleFun);
         }
+        TimeFn = setTimeout(() => {
+            if (doubleClick) {
+                // 三连击
+                console.log("3 click");
+                doubleClick = 0;
+                if (history.length === 0) {
+                    if (audio.paused && count === 0) {
+                        chooseMusic(audio);
+                        musicPlay();
+                    } else {
+                        audio.pause();
+                        changeRadomMusic();
+                    }
+                } else {
+                    history.pop();
+                    let musicNumber = history[history.length - 1];
+                    if (musicNumber !== 0) {
+                        chooseMusic(audio, musicNumber, false);
+                    } else {
+                        chooseMusic(audio);
+                    }
+                    musicPlay();
+                }
+            } else if (audio.paused && count === 0) {
+                // 暂停中
+                musicPlay();
+            } else {
+                // 播放中
+                musicPause();
+            }
+        }, 300);
+    });
 
+    function changeRadomMusic() {
+        audio.currentTime = 0;
+        chooseMusic(audio);
+        audio.load();
+        setTimeout(() => {
+            audio.play();
+        }, 300);
+    }
+
+    $(".picture").dblclick(() => {
+        clearTimeout(TimeFn);
+        doubleClick = 1;
+        TimeDoubleFun = setTimeout(() => {
+            if (audio.paused && count === 0) {
+                // 暂停中
+                audio.currentTime = 0
+                musicPlay();
+            } else {
+                // 播放中
+                audio.pause();
+                changeRadomMusic();
+            }
+            doubleClick = 0;
+        }, 300);
 
     });
 
@@ -163,8 +240,6 @@
 
     audio.addEventListener('loadeddata', () => {
         let duration = audio.duration;
-        // The duration variable now holds the duration (in seconds) of the audio clip 
-        // console.log(duration);
     })
 
 
