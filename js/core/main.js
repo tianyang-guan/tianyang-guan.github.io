@@ -33,7 +33,7 @@
         // console.log(tempSrc);
         // console.log(audio.src);
         if (tempSrc === audio.src) {
-            console.log("choose again.")
+            // console.log("choose again.")
             chooseMusic(audio);
         }
     }
