@@ -164,6 +164,7 @@
     let color_handle;
     let color_number = 0;
     function musicPlay() {
+        clearInterval(color_handle);
         $(".picture").removeClass("picture-music-back");
         $(".picture").addClass("picture-music");
         // $("body").css("animation", "pureRotation 5s ease infinite");
@@ -419,7 +420,7 @@
 
     window.addEventListener("resize", event => {
         abs_list_init();
-        console.log(abs_list)
+        // console.log(abs_list);
     });
 
 })(jQuery);
