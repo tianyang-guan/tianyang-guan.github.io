@@ -114,8 +114,10 @@
     }
 
     $(".nav-link__home").click(() => {
+        let offset = $("#Home").offset();
+        console.log("resume_postiton: ", offset);
         $(".realbody").animate({
-            scrollTop: 0
+            scrollTop: $(".realbody").scrollTop() + offset.top
         })
     });
 
@@ -270,16 +272,17 @@
     document.addEventListener('DOMContentLoaded', event => {
         loadImage('wallpaper');
         loadImage('pictureImage', 'picture');
+        let offset = $("#Home").offset();
+        console.log("resume_postiton: ", offset);
+        $(".realbody").animate({
+            scrollTop: $(".realbody").scrollTop() + offset.top
+        })
 
     });
 
     audio.addEventListener('loadeddata', () => {
         let duration = audio.duration;
     })
-
-    window.addEventListener("resize", event => {
-
-    });
 
 })(jQuery);
 
