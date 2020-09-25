@@ -153,7 +153,7 @@ a {
   height: 100%;
   overflow: auto;
   top: 6rem;
-  bottom: 6rem;
+  padding-bottom: 6rem;
   position: relative;
 }
 
@@ -176,7 +176,8 @@ a {
 .content {
   display: flex;
   position: relative;
-  min-height: 80vh;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .side {
@@ -397,6 +398,159 @@ a {
   transform: scale(1.1);
 }
 
+.resume-block {
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-bottom: 3rem;
+  overflow: hidden;
+  /* make sure child div could adopt boder*/
+}
+.resume-block h2 {
+  display: inline-block;
+  transition-duration: 500ms;
+}
+.resume-block h2:hover {
+  color: #f8f411;
+  font-size: 4rem;
+  transition-duration: 500ms;
+}
+
+.resume-title {
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+  margin: 0px;
+  padding: 3rem 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 5px rgba(255, 255, 255, 0.1);
+}
+
+.rseume-body {
+  display: flex;
+  /* width: 300px; */
+}
+
+.resume-context {
+  margin: 2rem;
+  display: block;
+}
+
+.resume-context-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.resume-context-title h3 {
+  display: inline-block;
+  transition-duration: 500ms;
+}
+.resume-context-title h3:hover {
+  color: #f8f411;
+  font-size: 2.2rem;
+  transform: translateY(-4px);
+  transition-duration: 500ms;
+}
+
+.resume-context-body {
+  border-left: rgba(255, 255, 255, 0.5) 1px solid;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.resume-element {
+  position: relative;
+  padding-left: 2.2rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  border-left: rgba(255, 255, 255, 0.5) 1px solid;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+.resume-element:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 2rem;
+  height: 12px;
+  top: 2.85rem;
+  left: -3.05rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+.resume-element:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 1.05rem;
+  height: 2px;
+  top: 3.15rem;
+  left: -1.1rem;
+  z-index: 1;
+}
+.resume-element h4 {
+  font-size: 1.7rem;
+}
+.resume-element span {
+  color: white;
+}
+.resume-element p {
+  font-size: larger;
+}
+
+.resume-element-small {
+  position: relative;
+  padding-left: 2.2rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  border-left: rgba(255, 255, 255, 0.5) 1px solid;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.resume-element-small:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 2rem;
+  height: 12px;
+  top: 2.85rem;
+  left: -3.05rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+.resume-element-small:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 1.05rem;
+  height: 2px;
+  top: 3.15rem;
+  left: -1.1rem;
+  z-index: 1;
+}
+.resume-element-small h4 {
+  font-size: 1.7rem;
+}
+
+.resume-body__add-width {
+  width: 4rem;
+}
+
+@media screen and (max-width: 1120px) {
+  .rseume-body {
+    display: flex;
+    flex-direction: column;
+  }
+}
 @keyframes bounceIn {
   from {
     opacity: 0;

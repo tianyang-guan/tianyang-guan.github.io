@@ -5,6 +5,11 @@
     let list = ["test.mp3", "attention.mp3", "shapeofyou1.mp3", "shapeofyou2.mp3", "snow.mp3", "wedonottalk.mp3", "legend.mp3"];
     let musicList = [];
     let history = [];
+
+
+
+
+
     list.forEach(element => {
         element = "./music/" + element;
         musicList.push(element);
@@ -60,12 +65,13 @@
     }
 
     $(".realbody").scroll(() => {
-
         let scroll = $(".realbody").scrollTop();
-        let result = Math.floor(scroll / 10) / 500;
+        let position = scroll >= 800 ? 800 : scroll;
+        let result = Math.floor(position / 10) / 500;
         let mobile_menu_list = $(".navbar__mobile .nav-list");
 
-        if (scroll < 800 && mobile_menu_list.css("display") === 'none') {
+        if (mobile_menu_list.css("display") === 'none') {
+
             $(".navbar").css("background-color", `rgba(255, 255, 255, ${result})`);
             $(".navbar").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
         }
@@ -106,6 +112,34 @@
             time_start = new Date();
         }, 500);
     }
+
+    $(".nav-link__home").click(() => {
+        $(".realbody").animate({
+            scrollTop: 0
+        })
+    });
+
+    $(".nav-link__resume").click(() => {
+        let offset = $("#Resume").offset();
+        console.log("resume_postiton: ", offset);
+        $(".realbody").animate({
+            scrollTop: $(".realbody").scrollTop() + offset.top
+        })
+    });
+
+    $(".nav-link__services").click(() => {
+        let offset = $("#Services").offset();
+        $(".realbody").animate({
+            scrollTop: $(".realbody").scrollTop() + offset.top
+        })
+    });
+
+    $(".nav-link__blog").click(() => {
+        let offset = $("#Blog").offset();
+        $(".realbody").animate({
+            scrollTop: $(".realbody").scrollTop() + offset.top
+        })
+    });
 
     function musicPause() {
         count = 3000 - (new Date() - time_start) % 3000;
@@ -236,14 +270,16 @@
     document.addEventListener('DOMContentLoaded', event => {
         loadImage('wallpaper');
         loadImage('pictureImage', 'picture');
+
     });
 
     audio.addEventListener('loadeddata', () => {
         let duration = audio.duration;
     })
 
+    window.addEventListener("resize", event => {
 
-
+    });
 
 })(jQuery);
 
