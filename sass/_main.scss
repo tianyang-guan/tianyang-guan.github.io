@@ -3,11 +3,12 @@ $backgound_color: #69c0ff;
 html,
 body {
     overflow: hidden;
+    position: absolute;
     margin: 0px;
     width: 100%;
     height: 100%;
     background-color: $backgound_color;
-    background-image: linear-gradient(to bottom right, $backgound_color, #b7eb8f);
+    background-image: linear-gradient(to bottom right, #69c0ff 0%, #b7eb8f 100%);
     color: #fff;
     font-family: "Quicksand", sans-serif;
     font-size: 16px;
@@ -159,6 +160,7 @@ a {
     top: 6rem;
     padding-bottom: 6rem;
     position: relative;
+    scroll-behavior: smooth;
 }
 
 .wallpaper {
@@ -182,6 +184,8 @@ a {
     position: relative;
     min-height: 100vh;
     margin: 0;
+    /*perspective 可以让该控件在scroll可继续向下很远的距离*/
+    // perspective: 10000px;
 }
 
 .side {
@@ -199,6 +203,12 @@ a {
         justify-content: center;
         align-items: center;
         padding: 5rem 3rem;
+    }
+
+    .home-block {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-list {
@@ -221,6 +231,11 @@ a {
         justify-content: center;
         align-items: center;
         padding: 5rem 3rem;
+    }
+    .home-block {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-list {
@@ -248,6 +263,12 @@ a {
         justify-content: space-around;
         justify-content: space-evenly;
         padding: 4rem;
+    }
+
+    .home-block {
+        align-items: center;
+        justify-content: space-around;
+        justify-content: space-evenly;
     }
 
     .side {
@@ -285,6 +306,7 @@ a {
     position: relative;
     width: 100%;
     transition-duration: 500ms;
+    z-index: 2000;
 }
 
 .picture-music {
@@ -411,11 +433,25 @@ a {
     }
 }
 
-.resume-block {
+.home-block {
+    display: flex;
+    position: relative;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8rem;
+    border-radius: 1rem;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.resume-block,
+.services-block,
+.blog-block,
+.contact-block {
     border-radius: 2rem;
     background-color: rgba(255, 255, 255, 0.1);
     padding-bottom: 3rem;
     overflow: hidden; /* make sure child div could adopt boder*/
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
     h2 {
         // width: 200px;
         display: inline-block;
@@ -423,7 +459,7 @@ a {
         &:hover {
             // box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
             // color: #b7eb8f;
-            color: rgba(248, 244, 17, 1);
+            color: black;
             font-size: 4rem;
             // transform: translateY(-4px);
             transition-duration: 500ms;
@@ -431,7 +467,9 @@ a {
     }
 }
 
-.resume-title {
+.resume-title,
+.services-title,
+.contact-title {
     font-size: 3rem;
     display: block;
     text-align: center;
@@ -462,7 +500,7 @@ a {
         &:hover {
             // box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
             // color: #b7eb8f;
-            color: rgba(248, 244, 17, 1);
+            color: black;
             font-size: 2.2rem;
             transform: translateY(-4px);
             transition-duration: 500ms;
@@ -486,7 +524,10 @@ a {
     border-left: rgba(255, 255, 255, 0.5) 1px solid;
     width: 400px;
     background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     margin-bottom: 2rem;
+    transition-duration: 300ms;
+
     &:before {
         content: "";
         display: inline-block;
@@ -512,14 +553,48 @@ a {
         left: -1.1rem;
         z-index: 1;
     }
+    &:hover {
+        color: black;
+        transform: translateY(-4px);
+        background-color: white;
+        transition-duration: 300ms;
+        border-radius: 1rem;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+        transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        h4 {
+            color: #096dd9;
+            transform: translateY(-4px);
+
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+        span {
+            color: #08979c;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+        p {
+            color: #722ed1;
+            transform: translateY(4px);
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+    }
     h4 {
+        display: block;
         font-size: 1.7rem;
+        transition-duration: 300ms;
     }
     span {
-        color: rgba(255, 255, 255, 1);
+        display: inline-block;
+
+        font-size: larger;
+        transition-duration: 300ms;
     }
     p {
+        display: block;
         font-size: larger;
+        transition-duration: 300ms;
     }
 }
 
@@ -531,6 +606,8 @@ a {
     border-left: rgba(255, 255, 255, 0.5) 1px solid;
     width: 400px;
     background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    transition-duration: 300ms;
 
     &:before {
         content: "";
@@ -557,11 +634,52 @@ a {
         left: -1.1rem;
         z-index: 1;
     }
+    &:hover {
+        color: black;
+        transform: translateY(-4px);
+        background-color: white;
+        transition-duration: 300ms;
+        border-radius: 1rem;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+        transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        h4 {
+            color: #096dd9;
+            transform: translateY(-4px);
+
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+        span {
+            color: #08979c;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+        p {
+            color: #722ed1;
+            transform: translateY(4px);
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+    }
     h4 {
+        display: block;
         font-size: 1.7rem;
+        transition-duration: 300ms;
+    }
+    span {
+        display: inline-block;
+
+        font-size: larger;
+        transition-duration: 300ms;
+    }
+    p {
+        display: block;
+        font-size: larger;
+        transition-duration: 300ms;
     }
 }
-.resume-body__add-width {
+.resume-body__add-width,
+.services-body__add-width {
     width: 4rem;
 }
 

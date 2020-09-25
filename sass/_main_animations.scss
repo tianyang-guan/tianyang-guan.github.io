@@ -73,6 +73,15 @@
     }
 }
 
+@keyframes pureRotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes rotation {
     from {
         transform: rotateX(-30deg) rotateZ(30deg) rotateY(20deg) translateX(0px) translateY(20px) translateZ(-20px)
@@ -103,6 +112,255 @@
     to {
         transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg) translateX(0px) translateY(0px) translateZ(0px);
         transition-duration: 500ms;
+    }
+}
+
+@keyframes backgoundColorChange {
+    // background-image: linear-gradient(
+    //     to bottom right,
+    //     #ff7875,
+    //     #ff9c6e,
+    //     #ffc069,
+    //     #ffd666,
+    //     #fff566,
+    //     #d3f261,
+    //     #95de64,
+    //     #5cdbd3,
+    //     #69c0ff,
+    //     #85a5ff,
+    //     #b37feb,
+    //     #ff85c0
+    // );
+    0% {
+        // background-position: 0% 0%;
+        background-image: linear-gradient(
+            to bottom right,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0
+        );
+    }
+    9% {
+        background-image: linear-gradient(
+            to bottom right,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #b37feb
+        );
+    }
+    18% {
+        background-image: linear-gradient(
+            to bottom right,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff
+        );
+    }
+    27% {
+        background-image: linear-gradient(
+            to bottom right,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff
+        );
+    }
+    36% {
+        background-image: linear-gradient(
+            to bottom right,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff
+        );
+    }
+    45% {
+        background-image: linear-gradient(
+            to bottom right,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff
+        );
+    }
+    50% {
+        background-image: linear-gradient(
+            to bottom right,
+            #69c0ff,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3
+        );
+    }
+    59% {
+        background-image: linear-gradient(
+            to bottom right,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64
+        );
+    }
+    68% {
+        background-image: linear-gradient(
+            to bottom right,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261
+        );
+    }
+    77% {
+        background-image: linear-gradient(
+            to bottom right,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666,
+            #fff566
+        );
+    }
+    86% {
+        background-image: linear-gradient(
+            to bottom right,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069,
+            #ffd666
+        );
+    }
+    95% {
+        background-image: linear-gradient(
+            to bottom right,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e,
+            #ffc069
+        );
+    }
+    100% {
+        background-image: linear-gradient(
+            to bottom right,
+            #ffc069,
+            #ffd666,
+            #fff566,
+            #d3f261,
+            #95de64,
+            #5cdbd3,
+            #69c0ff,
+            #85a5ff,
+            #85a5ff,
+            #b37feb,
+            #ff85c0,
+            #ff7875,
+            #ff9c6e
+        );
     }
 }
 

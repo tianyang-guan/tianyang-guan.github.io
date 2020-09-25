@@ -14,6 +14,7 @@
     <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     <script src="./js/lib/jquery.min.js"></script>
 
+
     <title>Tianyang Guan</title>
 </head>
 
@@ -39,6 +40,9 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link__blog">Blog</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link__contact">Contact</a>
+                </li>
             </ul>
         </div>
         <!-- /Navbar desktop -->
@@ -51,6 +55,7 @@
                 <a class="nav-link nav-link__resume">Resume</a>
                 <a class="nav-link nav-link__services">Services</a>
                 <a class="nav-link nav-link__blog">Blog</a>
+                <a class="nav-link nav-link__contact">Contact</a>
             </div>
         </div>
         <!-- /Navbar mobile -->
@@ -60,50 +65,52 @@
     <div class="realbody">
         <!-- Home page -->
         <div id="Home" class="content">
-            <aside class="side">
-                <figure id="picture" class="picture">
-                    <div class="picture-shadow"></div>
-                    <img id="pictureImage" class="picture-image" src="./img/protrait.png"
-                        data-image="./img/protrait.png" alt="Protrait of Tianyang Guan" width="320" height="320">
-                </figure>
-            </aside>
-            <main class="about">
-                <h1 class="name">
-                    Hi, I'am Tianyang Guan
-                </h1>
-                <p class="job">
-                    Full Stack Engineer
-                </p>
-                <hr class="hr">
-                <div class="description">
-                    <p>
-                        I spend my time traveling the world,
-                        build cool translater and study new technology.
+            <div class="home-block">
+                <aside class="side">
+                    <figure id="picture" class="picture">
+                        <div class="picture-shadow"></div>
+                        <img id="pictureImage" class="picture-image" src="./img/protrait.png"
+                            data-image="./img/protrait.png" alt="Protrait of Tianyang Guan" width="320" height="320">
+                    </figure>
+                </aside>
+                <main class="about">
+                    <h1 class="name">
+                        Hi, I'am Tianyang Guan
+                    </h1>
+                    <p class="job">
+                        Full Stack Engineer
                     </p>
-                </div>
-                <div class="contact">
-                    <a class="button" href="https://www.linkedin.com/in/tianyang-guan-cs/">
-                        Get in touch
-                    </a>
-                </div>
-                <ul class="social">
-                    <li>
-                        <a href="https://github.com/tianyang-guan">
-                            <i class="fab fa-github"></i>
+                    <hr class="hr">
+                    <div class="description">
+                        <p>
+                            I spend my time traveling the world,
+                            build cool translater and study new technology.
+                        </p>
+                    </div>
+                    <div class="contact">
+                        <a class="button" href="https://www.linkedin.com/in/tianyang-guan-cs/">
+                            Get in touch
                         </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/tianyang-guan-cs/">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:spcidealacm@gmail.com">
-                            <i class="fab fa-google"></i>
-                        </a>
-                    </li>
-                </ul>
-            </main>
+                    </div>
+                    <ul class="social">
+                        <li>
+                            <a href="https://github.com/tianyang-guan">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/tianyang-guan-cs/">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:spcidealacm@gmail.com">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </main>
+            </div>
         </div>
         <!-- /Home page -->
 
@@ -179,67 +186,17 @@
 
         <!-- Services page -->
         <div id="Services" class="content">
-            <div class="resume-block">
-                <div class="resume-title">
-                    <h2>Resume</h2>
+            <div class="services-block">
+                <div class="services-title">
+                    <h2>Services</h2>
                 </div>
-                <div class="rseume-body">
-                    <div class="resume-body__add-width"></div>
-                    <div class="resume-context">
-                        <div class="resume-context-title">
-                            <h3>Education</h3>
-                        </div>
-                        <div class="resume-context-body">
-                            <div class="resume-element">
-                                <h4 class="item-title">Specialization Course</h4>
-                                <span class="item-period">2010</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element">
-                                <h4 class="item-title">Specialization Course</h4>
-                                <span class="item-period">2010</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element-small">
-                                <h4 class="item-title">Specialization Course</h4>
-                                <span class="item-period">2010</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                        </div>
+                <div class="services-body">
+                    <div class="services-body__add-width"></div>
+                    <div class="services-context">
+
                     </div>
-                    <div class="resume-context">
-                        <div class="resume-context-title">
-                            <h3>Experience</h3>
-                        </div>
-                        <div class="resume-context-body">
-                            <div class="resume-element">
-                                <h4 class="item-title">Frontend-developer</h4>
-                                <span class="item-period">Dec 2012 - Current</span>
-                                <span class="item-small">Web Agency</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element">
-                                <h4 class="item-title">Web Designer</h4>
-                                <span class="item-period">Dec 2011 - Nov 2012</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element-small">
-                                <h4 class="item-title">Graphic Designer</h4>
-                                <span class="item-period">Jan 2010 - Dec 2011</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                        </div>
+                    <div class="services-context">
+
                     </div>
                     <div class="resume-body__add-width"></div>
                 </div>
@@ -249,7 +206,7 @@
 
         <!-- Blog page -->
         <div id="Blog" class="content">
-            <div class="resume-block">
+            <div class="blog-block">
                 <div class="resume-title">
                     <h2>Resume</h2>
                 </div>
@@ -317,6 +274,16 @@
         </div>
         <!-- /Blog page -->
 
+        <!-- Contact page -->
+        <div id="Contact" class="content">
+            <div class="contact-block">
+                <div class="contact-title">
+                    <h2>Contact</h2>
+                </div>
+
+            </div>
+        </div>
+        <!-- /Contact page -->
     </div>
     <script src="./js/core/main.js"></script>
 </body>
