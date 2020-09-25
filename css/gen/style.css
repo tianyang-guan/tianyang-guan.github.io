@@ -775,51 +775,25 @@ a {
     transition-duration: 500ms;
   }
 }
-@keyframes backgoundColorChange {
-  0% {
-    background-image: linear-gradient(to bottom right, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff, #b37feb, #ff85c0);
+@keyframes blickShow {
+  from {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
   }
-  9% {
-    background-image: linear-gradient(to bottom right, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff, #b37feb);
-  }
-  18% {
-    background-image: linear-gradient(to bottom right, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff);
-  }
-  27% {
-    background-image: linear-gradient(to bottom right, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff);
-  }
-  36% {
-    background-image: linear-gradient(to bottom right, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff);
-  }
-  45% {
-    background-image: linear-gradient(to bottom right, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff);
-  }
-  50% {
-    background-image: linear-gradient(to bottom right, #69c0ff, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3);
-  }
-  59% {
-    background-image: linear-gradient(to bottom right, #5cdbd3, #69c0ff, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261, #95de64);
-  }
-  68% {
-    background-image: linear-gradient(to bottom right, #95de64, #5cdbd3, #69c0ff, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566, #d3f261);
-  }
-  77% {
-    background-image: linear-gradient(to bottom right, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666, #fff566);
-  }
-  86% {
-    background-image: linear-gradient(to bottom right, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069, #ffd666);
-  }
-  95% {
-    background-image: linear-gradient(to bottom right, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e, #ffc069);
-  }
-  100% {
-    background-image: linear-gradient(to bottom right, #ffc069, #ffd666, #fff566, #d3f261, #95de64, #5cdbd3, #69c0ff, #85a5ff, #85a5ff, #b37feb, #ff85c0, #ff7875, #ff9c6e);
+  to {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
   }
 }
 .wallpaper,
 .picture-shadow,
 .picture-image {
   opacity: 0;
+}
+
+.home-block {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
 }
 
 .wallpaper,
@@ -857,6 +831,13 @@ a {
 .contact {
   animation-name: bounceIn;
   animation-delay: 600ms;
+}
+
+.home-block {
+  animation-duration: 3000ms;
+  animation-name: blickShow;
+  animation-delay: 800ms;
+  animation-fill-mode: both;
 }
 
 .picture-shadow,
@@ -997,4 +978,7 @@ a {
 }
 .navbar__mobile .nav-list .nav-link:nth-child(4) {
   animation-delay: 460ms;
+}
+.navbar__mobile .nav-list .nav-link:nth-child(5) {
+  animation-delay: 580ms;
 }
