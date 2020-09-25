@@ -296,7 +296,7 @@
     let TimeDoubleFun = null;
     let doubleClick = 0;
     $(".picture").click(() => {
-        console.log("1 click");
+        // console.log("1 click");
         clearTimeout(TimeFn)
         if (doubleClick) {
             clearTimeout(TimeDoubleFun);
@@ -304,7 +304,7 @@
         TimeFn = setTimeout(() => {
             if (doubleClick) {
                 // 三连击
-                console.log("3 click");
+                // console.log("3 click");
                 doubleClick = 0;
                 if (history.length === 0) {
                     if (audio.paused && count === 0) {
@@ -344,7 +344,7 @@
     }
 
     $(".picture").dblclick(() => {
-        console.log("2 click");
+        // console.log("2 click");
         clearTimeout(TimeFn);
         doubleClick = 1;
         TimeDoubleFun = setTimeout(() => {
