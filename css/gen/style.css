@@ -73,7 +73,7 @@ a {
 }
 .navbar__mobile .nav-menu:active {
   opacity: 1;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   transform: translateY(-20px);
   transition-duration: 250ms;
 }

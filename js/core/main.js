@@ -104,7 +104,7 @@
         return myAudio;
     }
 
-    $(".realbody").scroll(() => {
+    function navbarColorChange() {
         let scroll = $(".realbody").scrollTop();
         let position = scroll >= 800 ? 800 : scroll;
         let result = Math.floor(position / 10) / 500;
@@ -116,6 +116,10 @@
             $(".navbar").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
 
         }
+    }
+
+    $(".realbody").scroll(() => {
+        navbarColorChange();
         pageTranslate3d(".home-block", "left");
         pageTranslate3d(".resume-block", "right");
         pageTranslate3d(".services-block", "left");
@@ -379,23 +383,31 @@
 
     let navbar_background_color;
     let navbar_box_shadow;
+    let mobile_menu_list = $(".navbar__mobile .nav-list");
+    let navbar = $(".navbar");
+
+    function mobile_menu_show() {
+        mobile_menu_list.css("display", "block");
+        navbar_background_color = $(".navbar").css("background-color");
+        navbar_box_shadow = $(".navbar").css("box_shadow");
+        $(".navbar").removeAttr("style");
+        navbar.addClass("show-list");
+        $(".nav-menu").text("MENU △");
+    }
+
+    function mobile_menu_hide() {
+        mobile_menu_list.css("display", "none");
+        navbar.removeClass("show-list");
+        $(".navbar").css("background-color", "navbar_background_color");
+        $(".navbar").css("box_shadow", "navbar_box_shadow");
+        $(".nav-menu").text("MENU ▽");
+    }
 
     $(".nav-menu").click(() => {
-        let mobile_menu_list = $(".navbar__mobile .nav-list");
-        let navbar = $(".navbar");
         if (mobile_menu_list.css("display") === 'none') {
-            mobile_menu_list.css("display", "block");
-            navbar_background_color = $(".navbar").css("background-color");
-            navbar_box_shadow = $(".navbar").css("box_shadow");
-            $(".navbar").removeAttr("style");
-            navbar.addClass("show-list");
-            $(".nav-menu").text("MENU △");
+            mobile_menu_show();
         } else {
-            mobile_menu_list.css("display", "none");
-            navbar.removeClass("show-list");
-            $(".navbar").css("background-color", "navbar_background_color");
-            $(".navbar").css("box_shadow", "navbar_box_shadow");
-            $(".nav-menu").text("MENU ▽");
+            mobile_menu_hide();
         }
     });
 
@@ -418,9 +430,26 @@
     //     let duration = audio.duration;
     // })
 
+    let windows_width_status = 0;
+    let min_width = 600;
     window.addEventListener("resize", event => {
         abs_list_init();
         // console.log(abs_list);
+        let width = window.innerWidth;
+
+        if (width >= 600) {
+            if (windows_width_status === 0) {
+                // console.log("low to hight");
+                mobile_menu_hide();
+                navbarColorChange();
+            }
+            windows_width_status = 1;
+        } else {
+            if (windows_width_status === 1) {
+                // console.log("hight to low");
+            }
+            windows_width_status = 0;
+        }
     });
 
 })(jQuery);
