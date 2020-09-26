@@ -19,7 +19,7 @@
         list_init("#Resume");
         list_init("#Services");
         list_init("#Blog");
-        list_init("#Contact");
+        // list_init("#Contact");
 
         function list_init(element) {
             abs_list[element] = abs_position(element);
@@ -32,7 +32,7 @@
         block_init_base(".resume-block");
         block_init_base(".services-block");
         block_init_base(".blog-block");
-        block_init_base(".contact-block");
+        // block_init_base(".contact-block");
 
         function block_init_base(element) {
             let name = "#" + fisrstUpperCase(element.slice(1, -6));
@@ -131,7 +131,7 @@
             pageTranslate3d(".home-block", "left", "flex");
             pageTranslate3d(".resume-block", "right");
             pageTranslate3d(".services-block", "left");
-            pageTranslate3d(".blog-block", "right");
+            // pageTranslate3d(".blog-block", "right");
             // donot hide contect
             mode_store = mode;
         }
@@ -141,7 +141,7 @@
                 removeAttr(".home-block");
                 removeAttr(".resume-block");
                 removeAttr(".services-block");
-                removeAttr(".blog-block");
+                // removeAttr(".blog-block");
             }
             mode_store = mode;
         }
