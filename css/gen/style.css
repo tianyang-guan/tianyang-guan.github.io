@@ -470,40 +470,47 @@ a {
   box-shadow: 0 5px 5px rgba(255, 255, 255, 0.1);
 }
 
-.rseume-body {
+.rseume-body,
+.services-body {
   display: flex;
   /* width: 300px; */
 }
 
-.resume-context {
+.resume-context,
+.services-context {
   margin: 2rem;
   display: block;
 }
 
-.resume-context-title {
+.resume-context-title,
+.services-context-title {
   font-size: 2.2rem;
   margin-bottom: 1rem;
   display: block;
 }
-.resume-context-title h3 {
+.resume-context-title h3,
+.services-context-title h3 {
   display: inline-block;
   transition-duration: 500ms;
 }
-.resume-context-title h3:hover {
+.resume-context-title h3:hover,
+.services-context-title h3:hover {
   color: black;
   font-size: 2.2rem;
   transform: translateY(-4px);
   transition-duration: 500ms;
 }
 
-.resume-context-body {
+.resume-context-body,
+.services-context-body {
   border-left: rgba(255, 255, 255, 0.5) 1px solid;
   padding-left: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.resume-element {
+.resume-element,
+.services-element {
   position: relative;
   padding-left: 2.2rem;
   padding-bottom: 2rem;
@@ -515,7 +522,8 @@ a {
   margin-bottom: 2rem;
   transition-duration: 300ms;
 }
-.resume-element:before {
+.resume-element:before,
+.services-element:before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -528,7 +536,8 @@ a {
   border: 2px solid rgba(255, 255, 255, 0.5);
   z-index: 2;
 }
-.resume-element:after {
+.resume-element:after,
+.services-element:after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -540,7 +549,8 @@ a {
   left: -1.1rem;
   z-index: 1;
 }
-.resume-element:hover {
+.resume-element:hover,
+.services-element:hover {
   color: black;
   transform: translateY(-4px);
   background-color: white;
@@ -549,34 +559,40 @@ a {
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
   transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 }
-.resume-element:hover h4 {
+.resume-element:hover h4,
+.services-element:hover h4 {
   color: #096dd9;
   transform: translateY(-4px);
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 }
-.resume-element:hover span {
+.resume-element:hover span,
+.services-element:hover span {
   color: #08979c;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 }
-.resume-element:hover p {
+.resume-element:hover p,
+.services-element:hover p {
   color: #722ed1;
   transform: translateY(4px);
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 }
-.resume-element h4 {
+.resume-element h4,
+.services-element h4 {
   display: block;
   font-size: 1.7rem;
   transition-duration: 300ms;
 }
-.resume-element span {
+.resume-element span,
+.services-element span {
   display: inline-block;
   font-size: larger;
   transition-duration: 300ms;
 }
-.resume-element p {
+.resume-element p,
+.services-element p {
   display: block;
   font-size: larger;
   transition-duration: 300ms;
@@ -666,7 +682,8 @@ a {
 }
 
 @media screen and (max-width: 1120px) {
-  .rseume-body {
+  .rseume-body,
+.services-body {
     display: flex;
     flex-direction: column;
   }
@@ -706,6 +723,49 @@ a {
   font-size: 2rem;
   transform: translateY(-2rem);
   transition-duration: 300ms;
+}
+
+.services-body {
+  background-color: #fff;
+  padding-bottom: 5rem;
+}
+
+.services-context {
+  background-color: #fff;
+  color: black;
+}
+.services-context h3 {
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.setGreenColor {
+  color: #08979c;
+}
+
+.services-gif {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 30px;
+}
+.services-gif img:hover {
+  margin-top: -251px;
+}
+
+.services-description {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 3rem;
+}
+.services-description p {
+  display: inline-block;
+  max-width: 675px;
+  text-align: center;
 }
 
 @keyframes bounceIn {

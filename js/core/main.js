@@ -478,6 +478,22 @@
     //     let duration = audio.duration;
     // })
 
+    function setGreenColor(element) {
+        $(element).mouseenter(() => {
+            $(`${element} h3`).addClass("setGreenColor");
+        });
+
+        $(element).mouseleave(() => {
+            $(`${element} h3`).removeClass("setGreenColor");
+        });
+    }
+
+    setGreenColor("#Head");
+    setGreenColor("#Develop");
+    setGreenColor("#Design");
+    setGreenColor("#LightBox");
+
+
     function check_app_mode() {
         let width = window.innerWidth;
 
