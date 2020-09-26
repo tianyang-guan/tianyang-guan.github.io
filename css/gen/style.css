@@ -509,6 +509,43 @@ a {
   padding-bottom: 1rem;
 }
 
+.blog-context-body {
+  border-left: rgba(255, 255, 255, 0.5) 1px solid;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.blog-element {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.blog-element:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 2rem;
+  height: 12px;
+  top: 2.85rem;
+  left: -3.05rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+.blog-element:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 1.05rem;
+  height: 2px;
+  top: 3.15rem;
+  left: -1.1rem;
+  z-index: 1;
+}
+
 .resume-element,
 .services-element {
   position: relative;
@@ -766,6 +803,25 @@ a {
   display: inline-block;
   max-width: 675px;
   text-align: center;
+  font-size: 1.2rem;
+  transition-duration: 300ms;
+}
+.services-description p:hover {
+  color: black;
+  transform: translateY(-4px);
+  transition-duration: 300ms;
+}
+
+iframe {
+  width: 400px;
+  height: 225px;
+  transition-duration: 300ms;
+  border-radius: 1rem;
+}
+iframe:hover {
+  transform: translateY(-5px);
+  transition-duration: 300ms;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes bounceIn {
