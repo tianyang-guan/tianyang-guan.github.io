@@ -671,6 +671,43 @@ a {
     flex-direction: column;
   }
 }
+#Foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Foot .foot-block {
+  display: block;
+  padding: 4rem;
+}
+#Foot .foot-block .foot-title {
+  display: inline-block;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+#Foot .foot-block .foot-title .foot-name {
+  display: inline-block;
+  font-size: 1rem;
+  transition-duration: 300ms;
+}
+#Foot .foot-block .foot-title .statement {
+  display: inline-block;
+  font-size: 1rem;
+  transition-duration: 300ms;
+}
+#Foot .foot-block .foot-title:hover .foot-name {
+  color: #096dd9;
+  font-size: 3rem;
+  transform: translateY(-2rem);
+  transition-duration: 300ms;
+}
+#Foot .foot-block .foot-title:hover .statement {
+  color: #722ed1;
+  font-size: 2rem;
+  transform: translateY(-2rem);
+  transition-duration: 300ms;
+}
+
 @keyframes bounceIn {
   from {
     opacity: 0;

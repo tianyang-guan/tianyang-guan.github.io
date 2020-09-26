@@ -7,6 +7,9 @@
     let history = [];
     let abs_list = new Array();
     let block_list = new Array();
+
+    let mode = 1; //desktop mode :1 , mobile mode :0 default desktop mode
+
     abs_list_init();
     block_init()
 
@@ -115,20 +118,54 @@
             $(".navbar").css("background-color", `rgba(255, 255, 255, ${result})`);
             $(".navbar").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
 
+            $("#Foot").css("background-color", `rgba(255, 255, 255, ${result})`);
+            $("#Foot").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
+
         }
     }
 
+    let mode_store = mode;
     $(".realbody").scroll(() => {
         navbarColorChange();
-        pageTranslate3d(".home-block", "left");
-        pageTranslate3d(".resume-block", "right");
-        pageTranslate3d(".services-block", "left");
-        pageTranslate3d(".blog-block", "right");
+        if (mode === 1) {// desktop mode
+            pageTranslate3d(".home-block", "left", "flex");
+            pageTranslate3d(".resume-block", "right");
+            pageTranslate3d(".services-block", "left");
+            pageTranslate3d(".blog-block", "right");
+            // donot hide contect
+            mode_store = mode;
+        }
+
+        if (mode === 0) {// mobile mode
+            if (mode_store === 1) {
+                removeAttr(".home-block");
+                removeAttr(".resume-block");
+                removeAttr(".services-block");
+                removeAttr(".blog-block");
+            }
+            mode_store = mode;
+        }
+
     });
 
+    function isMobileMenuShow() {
+        if (mode === 0 && mobile_menu_list.css("display") !== 'none') {
+            return true;
+        }
+        return false;
+    }
 
+    $(".realbody").click(() => {
+        if (isMobileMenuShow()) {// mobile mode
+            mobile_menu_hide();
+        }
+    });
 
-    function pageTranslate3d(element, direction = "right") {
+    function removeAttr(element) {
+        $(element).removeAttr("style");
+    }
+
+    function pageTranslate3d(element, direction = "right", display_mode = "inline-block") {
         let scroll = $(".realbody").scrollTop();
 
         let abs_hight = abs_list[block_list[element]];
@@ -145,6 +182,14 @@
         };
         $(element).css("transform", `translateX(${tr_x}) translateY(${scroll_start}px) rotateY(${deg})`);
         $(element).css("opacity", opacity);
+        if (opacity <= 0.1) {
+            // display_mode = $(element).css("display");
+            $(element).css("display", "none");
+        } else {
+            if ($(element).css("display") === "none") {
+                $(element).css("display", display_mode);
+            }
+        }
 
     }
 
@@ -272,7 +317,6 @@
                 clearInterval(color_handle);
                 clearInterval(check_handle);
                 $("body").removeAttr("style");
-                // console.log("haha");
             }
         }, 24);
 
@@ -404,12 +448,15 @@
     }
 
     $(".nav-menu").click(() => {
-        if (mobile_menu_list.css("display") === 'none') {
-            mobile_menu_show();
-        } else {
+        if (isMobileMenuShow()) {
             mobile_menu_hide();
+        } else {
+            mobile_menu_show();
         }
     });
+
+    let windows_width_status = 0;
+    let min_width = 600;
 
     document.addEventListener('DOMContentLoaded', event => {
         loadImage('wallpaper');
@@ -418,8 +465,9 @@
         // console.log("resume_postiton: ", offset);
         $(".realbody").animate({
             scrollTop: $(".realbody").scrollTop() + offset.top
-        })
+        });
 
+        check_app_mode();
     });
 
     // audio.addEventListener('loadeddata', () => {
@@ -430,11 +478,7 @@
     //     let duration = audio.duration;
     // })
 
-    let windows_width_status = 0;
-    let min_width = 600;
-    window.addEventListener("resize", event => {
-        abs_list_init();
-        // console.log(abs_list);
+    function check_app_mode() {
         let width = window.innerWidth;
 
         if (width >= 600) {
@@ -444,12 +488,20 @@
                 navbarColorChange();
             }
             windows_width_status = 1;
+            mode = 1; // desktop mode
         } else {
             if (windows_width_status === 1) {
                 // console.log("hight to low");
+
             }
             windows_width_status = 0;
+            mode = 0; // mobile mode
         }
+    }
+    check_app_mode();
+    window.addEventListener("resize", event => {
+        abs_list_init();
+        check_app_mode();
     });
 
 })(jQuery);

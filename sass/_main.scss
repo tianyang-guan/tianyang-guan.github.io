@@ -689,3 +689,42 @@ a {
         flex-direction: column;
     }
 }
+
+#Foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .foot-block {
+        display: block;
+        padding: 4rem;
+        .foot-title {
+            display: inline-block;
+            transition-duration: 300ms;
+            cursor: pointer;
+            .foot-name {
+                display: inline-block;
+                font-size: 1rem;
+                transition-duration: 300ms;
+            }
+            .statement {
+                display: inline-block;
+                font-size: 1rem;
+                transition-duration: 300ms;
+            }
+            &:hover {
+                .foot-name {
+                    color: #096dd9;
+                    font-size: 3rem;
+                    transform: translateY(-2rem);
+                    transition-duration: 300ms;
+                }
+                .statement {
+                    color: #722ed1;
+                    font-size: 2rem;
+                    transform: translateY(-2rem);
+                    transition-duration: 300ms;
+                }
+            }
+        }
+    }
+}
