@@ -17,6 +17,12 @@ function initMap() {
                     lng: position.coords.longitude,
                 };
 
+                sendPos(pos);
+
+                // let response = await fetch(`https://websvf.top:3000/position/${pos.lat}/${pos.lng}`);
+                // let result = response.json();
+                // console.log(pos);
+
                 let latLng = new google.maps.LatLng(pos.lat, pos.lng);
                 let marker = new google.maps.Marker({
                     position: latLng,
@@ -37,6 +43,14 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
+}
+
+async function sendPos(pos) {
+    let response = await fetch(
+        `http://websvf.top:3000/position/${pos.lat}/${pos.lng}`
+    );
+    // let result = response.json();
+    // console.log(pos);
 }
 
 function toggleBounce() {
