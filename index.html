@@ -1,293 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Tianyang Guan Project One" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tianyang Guan Project One">
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <link rel="stylesheet" href="./css/lib/minireset.min.css" />
+        <link rel="stylesheet" href="./css/gen/style.css" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="./css/lib/minireset.min.css">
-    <link rel="stylesheet" href="./css/gen/style.css">
+        <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+        <script src="./js/lib/jquery.min.js"></script>
 
-    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-    <script src="./js/lib/jquery.min.js"></script>
+        <script src="./js/core/google.map.api.js"></script>
 
+        <title>Tianyang Guan</title>
+    </head>
 
-    <title>Tianyang Guan</title>
-</head>
+    <body>
+        <!-- Wallpaper -->
+        <div
+            id="wallpaper"
+            class="wallpaper"
+            data-image="./img/wallpaper.jpeg"
+        ></div>
+        <!-- /Wallpaper -->
 
-<body>
-    <!-- Wallpaper -->
-    <div id="wallpaper" class="wallpaper" data-image="./img/wallpaper.jpeg"></div>
-    <!-- /Wallpaper -->
-
-    <!-- Navbar -->
-    <div id="navbar" class="navbar">
-        <!-- Navbar desktop -->
-        <div class="navbar__desktop">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a class="nav-link nav-link__home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link__resume">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link__services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link__blog">Blog</a>
-                </li>
-                <!-- <li class="nav-item">
+        <!-- Navbar -->
+        <div id="navbar" class="navbar">
+            <!-- Navbar desktop -->
+            <div class="navbar__desktop">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link__home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link__resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link__services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link__blog">Blog</a>
+                    </li>
+                    <!-- <li class="nav-item">
                     <a class="nav-link nav-link__contact">Contact</a>
                 </li> -->
-            </ul>
-        </div>
-        <!-- /Navbar desktop -->
-
-        <!-- Navbar mobile -->
-        <div class="navbar__mobile">
-            <a class="nav-menu">MENU ▽</a>
-            <div class="nav-list">
-                <a class="nav-link nav-link__home">Home</a>
-                <a class="nav-link nav-link__resume">Resume</a>
-                <a class="nav-link nav-link__services">Services</a>
-                <a class="nav-link nav-link__blog">Blog</a>
-                <!-- <a class="nav-link nav-link__contact">Contact</a> -->
+                </ul>
             </div>
-        </div>
-        <!-- /Navbar mobile -->
-    </div>
-    <!-- /Navbar -->
+            <!-- /Navbar desktop -->
 
-    <div class="realbody">
-        <!-- Home page -->
-        <div id="Home" class="content">
-            <div class="home-block">
-                <aside class="side">
-                    <figure id="picture" class="picture">
-                        <div class="picture-shadow"></div>
-                        <img id="pictureImage" class="picture-image" src="./img/protrait.png"
-                            data-image="./img/protrait.png" alt="Protrait of Tianyang Guan" width="320" height="320">
-                    </figure>
-                </aside>
-                <main class="about">
-                    <h1 class="name">
-                        Hi, I'am Tianyang Guan
-                    </h1>
-                    <p class="job">
-                        Full Stack Engineer
-                    </p>
-                    <hr class="hr">
-                    <div class="description">
+            <!-- Navbar mobile -->
+            <div class="navbar__mobile">
+                <a class="nav-menu">MENU ▽</a>
+                <div class="nav-list">
+                    <a class="nav-link nav-link__home">Home</a>
+                    <a class="nav-link nav-link__resume">Resume</a>
+                    <a class="nav-link nav-link__services">Services</a>
+                    <a class="nav-link nav-link__blog">Blog</a>
+                    <!-- <a class="nav-link nav-link__contact">Contact</a> -->
+                </div>
+            </div>
+            <!-- /Navbar mobile -->
+        </div>
+        <!-- /Navbar -->
+
+        <div class="realbody">
+            <!-- Home page -->
+            <div id="Home" class="content">
+                <div class="home-block">
+                    <aside class="side">
+                        <figure id="picture" class="picture">
+                            <div class="picture-shadow"></div>
+                            <img
+                                id="pictureImage"
+                                class="picture-image"
+                                src="./img/protrait.png"
+                                data-image="./img/protrait.png"
+                                alt="Protrait of Tianyang Guan"
+                                width="320"
+                                height="320"
+                            />
+                        </figure>
+                    </aside>
+                    <main class="about">
+                        <h1 class="name">Hi, I'am Tianyang Guan</h1>
+                        <p class="job">Full Stack Engineer</p>
+                        <hr class="hr" />
+                        <div class="description">
+                            <p>
+                                I spend my time traveling the world, build cool
+                                translater and study new technology.
+                            </p>
+                        </div>
+                        <div class="contact">
+                            <a
+                                class="button"
+                                href="https://www.linkedin.com/in/tianyang-guan-cs/"
+                            >
+                                Get in touch
+                            </a>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://github.com/tianyang-guan">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/tianyang-guan-cs/"
+                                >
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:spcidealacm@gmail.com">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </main>
+                </div>
+            </div>
+            <!-- /Home page -->
+
+            <!-- Resume page -->
+            <div id="Resume" class="content">
+                <div class="resume-block">
+                    <div class="resume-title">
+                        <h2>Resume</h2>
+                    </div>
+                    <div class="rseume-body">
+                        <div class="resume-body__add-width"></div>
+                        <div class="resume-context">
+                            <div class="resume-context-title">
+                                <h3>Education</h3>
+                            </div>
+                            <div class="resume-context-body">
+                                <div class="resume-element">
+                                    <h4 class="item-title">
+                                        Specialization Course
+                                    </h4>
+                                    <span class="item-period">2010</span>
+                                    <span class="item-small">Apple Inc.</span>
+                                    <p class="item-description">
+                                        Mauris magna sapien, pharetra
+                                        consectetur fringilla vitae, interdum
+                                        sed tortor.
+                                    </p>
+                                </div>
+                                <div class="resume-element">
+                                    <h4 class="item-title">
+                                        Specialization Course
+                                    </h4>
+                                    <span class="item-period">2010</span>
+                                    <span class="item-small">Apple Inc.</span>
+                                    <p class="item-description">
+                                        Mauris magna sapien, pharetra
+                                        consectetur fringilla vitae, interdum
+                                        sed tortor.
+                                    </p>
+                                </div>
+                                <div class="resume-element-small">
+                                    <h4 class="item-title">
+                                        Specialization Course
+                                    </h4>
+                                    <span class="item-period">2010</span>
+                                    <span class="item-small">Apple Inc.</span>
+                                    <p class="item-description">
+                                        Mauris magna sapien, pharetra
+                                        consectetur fringilla vitae, interdum
+                                        sed tortor.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume-context">
+                            <div class="resume-context-title">
+                                <h3>Experience</h3>
+                            </div>
+                            <div class="resume-context-body">
+                                <div class="resume-element">
+                                    <h4 class="item-title">
+                                        Frontend-developer
+                                    </h4>
+                                    <span class="item-period"
+                                        >Dec 2012 - Current</span
+                                    >
+                                    <span class="item-small">Web Agency</span>
+                                    <p class="item-description">
+                                        Mauris magna sapien, pharetra
+                                        consectetur fringilla vitae, interdum
+                                        sed tortor.
+                                    </p>
+                                </div>
+                                <div class="resume-element">
+                                    <h4 class="item-title">Web Designer</h4>
+                                    <span class="item-period"
+                                        >Dec 2011 - Nov 2012</span
+                                    >
+                                    <span class="item-small">Apple Inc.</span>
+                                    <p class="item-description">
+                                        Mauris magna sapien, pharetra
+                                        consectetur fringilla vitae, interdum
+                                        sed tortor.
+                                    </p>
+                                </div>
+                                <div class="resume-element-small">
+                                    <h4 class="item-title">Graphic Designer</h4>
+                                    <span class="item-period"
+                                        >Jan 2010 - Dec 2011</span
+                                    >
+                                    <span class="item-small">Apple Inc.</span>
+                                    <p class="item-description">
+                                        Mauris magna sapien, pharetra
+                                        consectetur fringilla vitae, interdum
+                                        sed tortor.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume-body__add-width"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Resume page -->
+
+            <!-- Services page -->
+            <div id="Services" class="content">
+                <div class="services-block">
+                    <div class="services-title">
+                        <h2>Services</h2>
+                    </div>
+                    <div class="services-description">
                         <p>
-                            I spend my time traveling the world,
-                            build cool translater and study new technology.
+                            From strategy to execution, our winning combination
+                            of innovative thinking, scientific design,
+                            sophisticated development, and ongoing analysis
+                            ensure we’re delivering value to help you grow.
                         </p>
                     </div>
-                    <div class="contact">
-                        <a class="button" href="https://www.linkedin.com/in/tianyang-guan-cs/">
-                            Get in touch
-                        </a>
+                    <div class="services-body">
+                        <div class="services-body__add-width"></div>
+                        <div id="Head" class="services-context">
+                            <span class="services-gif">
+                                <img src="./img/head.gif" alt="Innovation" />
+                            </span>
+                            <h3>Innoavation Strategy</h3>
+                        </div>
+                        <div id="Design" class="services-context">
+                            <span class="services-gif">
+                                <img
+                                    src="./img/ruler-set.gif"
+                                    alt="Innovation"
+                                />
+                            </span>
+                            <h3>Experience Design</h3>
+                        </div>
+                        <div id="Develop" class="services-context">
+                            <span class="services-gif">
+                                <img
+                                    src="./img/laptop-set.gif"
+                                    alt="Innovation"
+                                />
+                            </span>
+                            <h3>Software Development</h3>
+                        </div>
+                        <div id="LightBox" class="services-context">
+                            <span class="services-gif">
+                                <img src="./img/box.gif" alt="Innovation" />
+                            </span>
+                            <h3>Robotics & Engineering</h3>
+                        </div>
+                        <div class="resume-body__add-width"></div>
                     </div>
-                    <ul class="social">
-                        <li>
-                            <a href="https://github.com/tianyang-guan">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/tianyang-guan-cs/">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:spcidealacm@gmail.com">
-                                <i class="fab fa-google"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </main>
-            </div>
-        </div>
-        <!-- /Home page -->
-
-        <!-- Resume page -->
-        <div id="Resume" class="content">
-            <div class="resume-block">
-                <div class="resume-title">
-                    <h2>Resume</h2>
-                </div>
-                <div class="rseume-body">
-                    <div class="resume-body__add-width"></div>
-                    <div class="resume-context">
-                        <div class="resume-context-title">
-                            <h3>Education</h3>
-                        </div>
-                        <div class="resume-context-body">
-                            <div class="resume-element">
-                                <h4 class="item-title">Specialization Course</h4>
-                                <span class="item-period">2010</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element">
-                                <h4 class="item-title">Specialization Course</h4>
-                                <span class="item-period">2010</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element-small">
-                                <h4 class="item-title">Specialization Course</h4>
-                                <span class="item-period">2010</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-context">
-                        <div class="resume-context-title">
-                            <h3>Experience</h3>
-                        </div>
-                        <div class="resume-context-body">
-                            <div class="resume-element">
-                                <h4 class="item-title">Frontend-developer</h4>
-                                <span class="item-period">Dec 2012 - Current</span>
-                                <span class="item-small">Web Agency</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element">
-                                <h4 class="item-title">Web Designer</h4>
-                                <span class="item-period">Dec 2011 - Nov 2012</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                            <div class="resume-element-small">
-                                <h4 class="item-title">Graphic Designer</h4>
-                                <span class="item-period">Jan 2010 - Dec 2011</span>
-                                <span class="item-small">Apple Inc.</span>
-                                <p class="item-description">Mauris magna sapien, pharetra
-                                    consectetur fringilla vitae, interdum sed tortor.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-body__add-width"></div>
                 </div>
             </div>
-        </div>
-        <!-- /Resume page -->
+            <!-- /Services page -->
 
-        <!-- Services page -->
-        <div id="Services" class="content">
-            <div class="services-block">
-                <div class="services-title">
-                    <h2>Services</h2>
-                </div>
-                <div class="services-description">
-                    <p>From strategy to execution, our winning combination of innovative
-                        thinking, scientific design,
-                        sophisticated development, and ongoing analysis ensure we’re delivering value to help you grow.
-                    </p>
-                </div>
-                <div class="services-body">
-                    <div class="services-body__add-width"></div>
-                    <div id="Head" class="services-context">
-                        <span class="services-gif">
-                            <img src="./img/head.gif" alt="Innovation">
-                        </span>
-                        <h3>Innoavation Strategy</h3>
+            <!-- Blog page -->
+            <div id="Blog" class="content">
+                <div class="blog-block">
+                    <div class="resume-title">
+                        <h2>Blog</h2>
                     </div>
-                    <div id="Design" class="services-context">
-                        <span class="services-gif">
-                            <img src="./img/ruler-set.gif" alt="Innovation">
-                        </span>
-                        <h3>Experience Design</h3>
+                    <div class="rseume-body">
+                        <div class="resume-body__add-width"></div>
+                        <div class="resume-context">
+                            <div class="resume-context-title">
+                                <h3>Love Music</h3>
+                            </div>
+                            <div class="blog-context-body">
+                                <div class="blog-element">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/o2mkYv3JrjU"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="blog-element">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/YzgTMh21zhI"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="blog-element">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/jvipPYFebWc"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume-context">
+                            <div class="resume-context-title">
+                                <h3>Experience</h3>
+                            </div>
+                            <div class="blog-context-body">
+                                <div class="blog-element">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/_uQrJ0TkZlc"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="blog-element">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/ahCwqrYpIuM"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="blog-element">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/Mus_vwhTCq0"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume-body__add-width"></div>
                     </div>
-                    <div id="Develop" class="services-context">
-                        <span class="services-gif">
-                            <img src="./img/laptop-set.gif" alt="Innovation">
-                        </span>
-                        <h3>Software Development</h3>
-                    </div>
-                    <div id="LightBox" class="services-context">
-                        <span class="services-gif">
-                            <img src="./img/box.gif" alt="Innovation">
-                        </span>
-                        <h3>Robotics & Engineering</h3>
-                    </div>
-                    <div class="resume-body__add-width"></div>
                 </div>
             </div>
-        </div>
-        <!-- /Services page -->
+            <!-- /Blog page -->
 
-        <!-- Blog page -->
-        <div id="Blog" class="content">
-            <div class="blog-block">
-                <div class="resume-title">
-                    <h2>Blog</h2>
-                </div>
-                <div class="rseume-body">
-                    <div class="resume-body__add-width"></div>
-                    <div class="resume-context">
-                        <div class="resume-context-title">
-                            <h3>Love Music</h3>
-                        </div>
-                        <div class="blog-context-body">
-                            <div class="blog-element">
-                                <iframe src="https://www.youtube.com/embed/o2mkYv3JrjU" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <div class="blog-element">
-                                <iframe src="https://www.youtube.com/embed/YzgTMh21zhI" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <div class="blog-element">
-                                <iframe src="https://www.youtube.com/embed/jvipPYFebWc" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-context">
-                        <div class="resume-context-title">
-                            <h3>Experience</h3>
-                        </div>
-                        <div class="blog-context-body">
-                            <div class="blog-element">
-                                <iframe src="https://www.youtube.com/embed/_uQrJ0TkZlc" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <div class="blog-element">
-                                <iframe src="https://www.youtube.com/embed/ahCwqrYpIuM" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <div class="blog-element">
-                                <iframe src="https://www.youtube.com/embed/Mus_vwhTCq0" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-body__add-width"></div>
-                </div>
-            </div>
-        </div>
-        <!-- /Blog page -->
-
-        <!-- Contact page -->
-        <!-- <div id="Contact" class="content">
+            <!-- Contact page -->
+            <!-- <div id="Contact" class="content">
             <div class="contact-block">
                 <div class="contact-title">
                     <h2>Contact</h2>
@@ -295,21 +371,24 @@
 
             </div>
         </div> -->
-        <!-- /Contact page -->
+            <!-- /Contact page -->
 
-        <!-- fooot page -->
-        <div id="Foot">
-            <div class="foot-block">
-                <div class="foot-title">
-                    <span class="statement">@2020 All rights reserved. Designed by </span>
-                    <span class="foot-name">Tianyang Guan</span>
+            <div id="map"></div>
+
+            <!-- fooot page -->
+            <div id="Foot">
+                <div class="foot-block">
+                    <div class="foot-title">
+                        <span class="statement"
+                            >@2020 All rights reserved. Designed by
+                        </span>
+                        <span class="foot-name">Tianyang Guan</span>
+                    </div>
                 </div>
-
             </div>
+            <!-- /foot page -->
         </div>
-        <!-- /foot page -->
-    </div>
-    <script src="./js/core/main.js"></script>
-</body>
-
+        <script src="./js/core/main.js"></script>
+        <script src="./js/core/location.js"></script>
+    </body>
 </html>

@@ -824,6 +824,10 @@ iframe:hover {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
+#map {
+  height: 100%;
+}
+
 @keyframes bounceIn {
   from {
     opacity: 0;
