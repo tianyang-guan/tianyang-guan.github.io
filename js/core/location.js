@@ -17,7 +17,8 @@ function initMap() {
                     lng: position.coords.longitude,
                 };
 
-                sendPos(pos);
+                // sendPos(pos);
+                sendPos();
 
                 // let response = await fetch(`https://websvf.top:3000/position/${pos.lat}/${pos.lng}`);
                 // let result = response.json();
@@ -45,12 +46,14 @@ function initMap() {
     }
 }
 
-async function sendPos(pos) {
-    let response = await fetch(
-        `https://websvf.top:3001/position/${pos.lat}/${pos.lng}`
+async function sendPos() {
+    let str = new Request(
+        `http://127.0.0.1:3000/weatherpos/${pos.lat}/${pos.lng}`
     );
-    let result = response.json();
-    console.log(pos);
+    console.log(str);
+    let response = await fetch(str, { mode: "no-cors" });
+    let result = await response.json();
+    console.log(result);
 }
 
 function toggleBounce() {
