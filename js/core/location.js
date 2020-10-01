@@ -49,8 +49,8 @@ async function sendPos(pos) {
     let response = await fetch(
         `http://websvf.top:3000/position/${pos.lat}/${pos.lng}`
     );
-    // let result = response.json();
-    // console.log(pos);
+    let result = response.json();
+    console.log(pos);
 }
 
 function toggleBounce() {
