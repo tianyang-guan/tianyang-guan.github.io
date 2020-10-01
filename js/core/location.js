@@ -7,7 +7,6 @@ function initMap() {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 15,
     });
-    infoWindow = new google.maps.InfoWindow();
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -57,3 +56,25 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     );
     infoWindow.open(map);
 }
+
+const intersect = function (a, b) {
+    return new Set(a.filter((v) => ~b.indexOf(v)));
+};
+
+const gettowncity = function (addcomp) {
+    if (typeof addcomp == "object" && addcomp instanceof Array) {
+        let order = [
+            "sublocality_level_1",
+            "neighborhood",
+            "locality",
+            "postal_town",
+        ];
+
+        for (let i = 0; i < addcomp.length; i++) {
+            let obj = addcomp[i];
+            let types = obj.types;
+            if (intersect(order, types).size > 0) return obj;
+        }
+    }
+    return false;
+};
