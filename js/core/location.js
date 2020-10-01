@@ -23,7 +23,10 @@ function initMap() {
                     position: latLng,
                     map: map,
                     title: "Your location",
+                    draggable: true,
+                    animation: google.maps.Animation.DROP,
                 });
+                marker.addListener("click", toggleBounce);
 
                 map.setCenter(pos);
             },
@@ -34,6 +37,14 @@ function initMap() {
     } else {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
+    }
+}
+
+function toggleBounce() {
+    if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+    } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
     }
 }
 
