@@ -28,7 +28,11 @@
         // list_init("#Contact");
 
         function list_init(element) {
-            abs_list[element] = abs_position(element);
+            if (element === "#Home") {
+                abs_list[element] = 0;
+            } else {
+                abs_list[element] = abs_position(element);
+            }
         }
     }
 
@@ -478,11 +482,11 @@
     document.addEventListener("DOMContentLoaded", (event) => {
         loadImage("wallpaper");
         loadImage("pictureImage", "picture");
-        let offset = $("#Home").offset();
-        // console.log("resume_postiton: ", offset);
-        $(".realbody").animate({
-            scrollTop: $(".realbody").scrollTop() + offset.top,
-        });
+        // let offset = $("#Home").offset();
+        // // console.log("resume_postiton: ", offset);
+        // $(".realbody").animate({
+        //     scrollTop: $(".realbody").scrollTop() + offset.top,
+        // });
 
         check_app_mode();
     });
