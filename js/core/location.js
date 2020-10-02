@@ -142,8 +142,8 @@ function geocodeLatLng(pos, geocoder) {
 
     let weather_handle = setInterval(() => {
         if (weather) {
-            $(".temp").text(weather.current.temp + "℃");
-            $(".humi").text(weather.current.humidity + "RH");
+            $(".temp").text(weather.current.temp + " ℃");
+            $(".humi").text(weather.current.humidity + " RH");
             let array = weather.current.weather;
             for (let i = 0; i < array.length; i++) {
                 let icon = array[i].icon;

@@ -562,6 +562,8 @@
 
     function GetTime() {
         // let time_zone = (0 - new Date().getTimezoneOffset()) * 60;
+        let width = window.innerWidth;
+
         let date = new Date();
         let year = date.getFullYear();
         let month = date.getMonth() + 1;
@@ -570,9 +572,12 @@
         let week = GetWeek(date.getDay());
         let minutes = AppendZero(date.getMinutes());
         let seconds = AppendZero(date.getSeconds());
-
-        let result = `${year} - ${month} - ${day}     ${hours} : ${minutes} : ${seconds}    ${week}`;
-
+        let result = "";
+        if (width >= 1200) {
+            result = `${year} - ${month} - ${day}     ${hours} : ${minutes} : ${seconds}    ${week}`;
+        } else {
+            result = `${year}-${month}-${day} ${week}\n${hours}:${minutes}:${seconds}`;
+        }
         return result;
     }
 

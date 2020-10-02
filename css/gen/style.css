@@ -206,6 +206,7 @@ a {
   }
 
   .weather-block,
+.temp-humi-flex,
 .home-block {
     flex-direction: column;
     justify-content: center;
@@ -234,6 +235,7 @@ a {
   }
 
   .weather-block,
+.temp-humi-flex,
 .home-block {
     flex-direction: column;
     justify-content: center;
@@ -257,6 +259,20 @@ a {
     display: none;
   }
 }
+@media screen and (max-width: 1000px) {
+  .weather-block {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .temp-humi-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 @media screen and (min-width: 800px) {
   .content {
     align-items: center;
@@ -265,11 +281,11 @@ a {
     padding: 4rem;
   }
 
-  .weather-block,
+  .temp-humi-flex,
+.weather-block,
 .home-block {
     align-items: center;
     justify-content: space-around;
-    justify-content: space-evenly;
   }
 
   .side {
@@ -849,6 +865,7 @@ iframe:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-family: "Orbitron";
   padding: 0rem 1rem;
 }
@@ -856,8 +873,6 @@ iframe:hover {
 .weather-status-felx,
 .temp-humi-flex {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   font-family: "Orbitron";
   padding: 0rem 1rem;
 }
@@ -875,8 +890,9 @@ iframe:hover {
 }
 
 .addr {
-  display: block;
-  white-space: pre;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-size: 1rem;
 }
 
@@ -904,8 +920,7 @@ iframe:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 6rem;
+  margin: 3rem;
 }
 
 .weather-block {
@@ -931,14 +946,20 @@ iframe:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 6rem;
+  width: 6rem;
   position: relative;
   top: 0.5rem;
 }
 
 .weather-status-element {
-  height: 100%;
-  display: block;
+  height: 6rem;
+  width: 6rem;
+  display: inline-block;
+}
+
+#Home {
+  padding-bottom: 24rem;
 }
 
 @keyframes bounceIn {
