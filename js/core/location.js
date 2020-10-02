@@ -150,7 +150,7 @@ function geocodeLatLng(pos, geocoder) {
                 let status = array[i].main.toLowerCase();
                 $("#weather-status").append(
                     `<div class="weather-status-element">
-                        <img class="weather-img" src="http://openweathermap.org/img/wn/${icon}@2x.png"></img>
+                        <img class="weather-img" src="https://openweathermap.org/img/wn/${icon}@2x.png"></img>
                         <span class="weather-text">${status}</span>
                     <div>`
                 );
