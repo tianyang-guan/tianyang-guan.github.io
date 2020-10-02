@@ -94,8 +94,8 @@ async function sendPos(pos, geocoder) {
 
         address = position[0].formatted_address;
 
-        console.log(weather);
-        console.log(position);
+        // console.log(weather);
+        // console.log(position);
     } catch (error) {
         console.log(error);
     }
