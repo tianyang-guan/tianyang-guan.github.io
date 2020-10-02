@@ -52,11 +52,12 @@ async function sendPos() {
         return;
     }
     let str = new Request(
-        `https://aitopcoder.com:3001/weatherpos/${pos.lat}/${pos.lng}`
+        `https://aitopcoder.com:3001/weatherpos/${pos.lat}/${pos.lng}`,
+        { method: "GET" }
     );
     // console.log(str);
     let response = await fetch(str);
-    let result = await response.text();
+    let result = await response.body();
     console.log(result);
 }
 
