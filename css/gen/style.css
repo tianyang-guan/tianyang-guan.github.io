@@ -733,6 +733,8 @@ a {
 iframe {
   max-width: 400px;
   max-height: 225px;
+  width: 400px;
+  height: 400px;
   transition-duration: 300ms;
   border-radius: 1rem;
 }
@@ -948,6 +950,11 @@ iframe:hover {
 
   .navbar__mobile {
     display: flex;
+  }
+
+  iframe {
+    width: unset;
+    height: unset;
   }
 }
 @media screen and (max-width: 799px) and (min-width: 600px) {

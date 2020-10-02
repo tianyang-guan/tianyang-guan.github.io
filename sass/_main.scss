@@ -755,6 +755,8 @@ a {
 iframe {
     max-width: 400px;
     max-height: 225px;
+    width: 400px;
+    height: 400px;
     transition-duration: 300ms;
     border-radius: 1rem;
     &:hover {
@@ -981,6 +983,11 @@ iframe {
 
     .navbar__mobile {
         display: flex;
+    }
+
+    iframe {
+        width: unset;
+        height: unset;
     }
 }
 
