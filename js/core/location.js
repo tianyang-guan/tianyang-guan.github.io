@@ -47,12 +47,16 @@ function initMap() {
 }
 
 async function sendPos() {
+    if (!("fetch" in window)) {
+        console.log("Fetch API not found, try including the polyfill");
+        return;
+    }
     let str = new Request(
         `https://aitopcoder.com:3001/weatherpos/${pos.lat}/${pos.lng}`
     );
-    console.log(str);
+    // console.log(str);
     let response = await fetch(str);
-    let result = await response.json();
+    let result = await response.text();
     console.log(result);
 }
 
