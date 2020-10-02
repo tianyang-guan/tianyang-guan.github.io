@@ -188,6 +188,10 @@ a {
     position: relative;
     min-height: 100vh;
     margin: 0;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
     /*perspective 可以让该控件在scroll可继续向下很远的距离*/
     // perspective: 10000px;
 }
@@ -209,6 +213,7 @@ a {
         padding: 5rem 3rem;
     }
 
+    .weather-block,
     .home-block {
         flex-direction: column;
         justify-content: center;
@@ -236,6 +241,7 @@ a {
         align-items: center;
         padding: 5rem 3rem;
     }
+    .weather-block,
     .home-block {
         flex-direction: column;
         justify-content: center;
@@ -269,6 +275,7 @@ a {
         padding: 4rem;
     }
 
+    .weather-block,
     .home-block {
         align-items: center;
         justify-content: space-around;
@@ -470,7 +477,6 @@ a {
         }
     }
 }
-
 .resume-title,
 .services-title,
 .contact-title {
@@ -481,6 +487,7 @@ a {
     padding: 3rem 0;
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 5px 5px rgba(255, 255, 255, 0.1);
+    width: 100%;
 }
 
 .rseume-body,
@@ -849,6 +856,118 @@ iframe {
     }
 }
 
-#map {
+.google-map,
+.map {
     height: 100%;
 }
+
+.google-map {
+    display: none;
+}
+
+.map-display {
+    display: block;
+}
+
+.time-addr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Orbitron";
+    padding: 0rem 1rem;
+}
+
+.weather-status-felx,
+.temp-humi-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Orbitron";
+    padding: 0rem 1rem;
+}
+
+.temp-humi,
+.weather-status {
+    display: none;
+}
+
+.time {
+    white-space: pre;
+    display: block;
+
+    font-size: 1.2rem;
+    // width: 100%;
+    text-align: center;
+}
+.addr {
+    display: block;
+    white-space: pre;
+    font-size: 1rem;
+    // width: 100%;
+}
+
+.temp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre;
+    font-size: 3rem;
+    height: 100%;
+    padding-right: 1rem;
+}
+
+.humi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre;
+    font-size: 3rem;
+    height: 100%;
+}
+
+.weather {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 6rem;
+}
+
+.weather-block {
+    display: flex;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0rem 0rem;
+    border-radius: 1rem;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.weather-text {
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: rgba(0, 0, 0, 0.6);
+    bottom: 1.3rem;
+}
+
+.weather-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    top: 0.5rem;
+    // transform: scale(1);
+}
+
+.weather-status-element {
+    height: 100%;
+    display: block;
+}
+
+// #Home {
+//     height: 80vh;
+// }

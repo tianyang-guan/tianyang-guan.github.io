@@ -181,6 +181,10 @@ a {
   position: relative;
   min-height: 100vh;
   margin: 0;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
   /*perspective 可以让该控件在scroll可继续向下很远的距离*/
 }
 
@@ -201,7 +205,8 @@ a {
     padding: 5rem 3rem;
   }
 
-  .home-block {
+  .weather-block,
+.home-block {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -228,7 +233,8 @@ a {
     padding: 5rem 3rem;
   }
 
-  .home-block {
+  .weather-block,
+.home-block {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -259,7 +265,8 @@ a {
     padding: 4rem;
   }
 
-  .home-block {
+  .weather-block,
+.home-block {
     align-items: center;
     justify-content: space-around;
     justify-content: space-evenly;
@@ -468,6 +475,7 @@ a {
   padding: 3rem 0;
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 5px 5px rgba(255, 255, 255, 0.1);
+  width: 100%;
 }
 
 .rseume-body,
@@ -824,8 +832,113 @@ iframe:hover {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-#map {
+.google-map,
+.map {
   height: 100%;
+}
+
+.google-map {
+  display: none;
+}
+
+.map-display {
+  display: block;
+}
+
+.time-addr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Orbitron";
+  padding: 0rem 1rem;
+}
+
+.weather-status-felx,
+.temp-humi-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Orbitron";
+  padding: 0rem 1rem;
+}
+
+.temp-humi,
+.weather-status {
+  display: none;
+}
+
+.time {
+  white-space: pre;
+  display: block;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.addr {
+  display: block;
+  white-space: pre;
+  font-size: 1rem;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: pre;
+  font-size: 3rem;
+  height: 100%;
+  padding-right: 1rem;
+}
+
+.humi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: pre;
+  font-size: 3rem;
+  height: 100%;
+}
+
+.weather {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 6rem;
+}
+
+.weather-block {
+  display: flex;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0rem 0rem;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.weather-text {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: rgba(0, 0, 0, 0.6);
+  bottom: 1.3rem;
+}
+
+.weather-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  top: 0.5rem;
+}
+
+.weather-status-element {
+  height: 100%;
+  display: block;
 }
 
 @keyframes bounceIn {
@@ -948,11 +1061,22 @@ iframe:hover {
   opacity: 0;
 }
 
+.weather-block,
+.time,
+.addr {
+  opacity: 0;
+}
+
 .home-block {
   background-color: rgba(255, 255, 255, 0);
   box-shadow: none;
 }
 
+.weather-block,
+.weather-status-flex,
+.temp-humi-flex,
+.time,
+.addr,
 .wallpaper,
 .picture-shadow,
 .picture-image,
@@ -1058,6 +1182,20 @@ iframe:hover {
   animation-duration: 500ms;
   animation-name: slideUp;
   animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+}
+
+.weather-block {
+  animation-duration: 5000ms;
+  animation-name: slideUp;
+  animation-delay: 3000ms;
+}
+
+.temp-humi-flex,
+.weather-status-flex,
+.time,
+.addr {
+  animation-duration: 6000ms;
+  animation-name: slideUp;
 }
 
 .name {

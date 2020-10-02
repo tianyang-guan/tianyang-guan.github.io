@@ -7,7 +7,7 @@
 
         <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand"
+            href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand|Orbitron"
         />
         <link
             rel="stylesheet"
@@ -75,6 +75,21 @@
         <div class="realbody">
             <!-- Home page -->
             <div id="Home" class="content">
+                <!-- weather page -->
+                <div class="weather">
+                    <div class="weather-block">
+                        <div class="time-addr">
+                            <span class="time"></span>
+                            <span class="addr"></span>
+                        </div>
+                        <div id="temp-humi" class="temp-humi">
+                            <span class="temp"></span>
+                            <span class="humi"></span>
+                        </div>
+                        <div id="weather-status" class="weather-status"></div>
+                    </div>
+                </div>
+                <!-- weather page -->
                 <div class="home-block">
                     <aside class="side">
                         <figure id="picture" class="picture">
@@ -368,12 +383,12 @@
                 <div class="contact-title">
                     <h2>Contact</h2>
                 </div>
-
-            </div>
-        </div> -->
+            </div> -->
             <!-- /Contact page -->
 
-            <div id="map"></div>
+            <div id="google-map" class="google-map">
+                <div id="map" class="map"></div>
+            </div>
 
             <!-- fooot page -->
             <div id="Foot">

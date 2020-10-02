@@ -1,8 +1,15 @@
 (function ($) {
-    "use strict"
+    "use strict";
 
-
-    let list = ["test.mp3", "attention.mp3", "shapeofyou1.mp3", "shapeofyou2.mp3", "snow.mp3", "wedonottalk.mp3", "legend.mp3"];
+    let list = [
+        "test.mp3",
+        "attention.mp3",
+        "shapeofyou1.mp3",
+        "shapeofyou2.mp3",
+        "snow.mp3",
+        "wedonottalk.mp3",
+        "legend.mp3",
+    ];
     let musicList = [];
     let history = [];
     let abs_list = new Array();
@@ -11,10 +18,9 @@
     let mode = 1; //desktop mode :1 , mobile mode :0 default desktop mode
 
     abs_list_init();
-    block_init()
+    block_init();
 
     function abs_list_init() {
-
         list_init("#Home");
         list_init("#Resume");
         list_init("#Services");
@@ -27,7 +33,6 @@
     }
 
     function block_init() {
-
         block_init_base(".home-block");
         block_init_base(".resume-block");
         block_init_base(".services-block");
@@ -41,19 +46,17 @@
         }
     }
 
-
-
     function abs_position(element) {
         let offset = $(element).offset();
         // console.log("offset.top: ", Math.floor(offset.top), "scrollTop: ", $(".realbody").scrollTop());
-        return $(".realbody").scrollTop() + Math.floor(offset.top)
+        return $(".realbody").scrollTop() + Math.floor(offset.top);
     }
 
     function fisrstUpperCase(str) {
         return str[0].toUpperCase() + str.slice(1).toLowerCase();
     }
 
-    list.forEach(element => {
+    list.forEach((element) => {
         element = "./music/" + element;
         musicList.push(element);
     });
@@ -113,21 +116,32 @@
         let result = Math.floor(position / 10) / 500;
         let mobile_menu_list = $(".navbar__mobile .nav-list");
 
-        if (mobile_menu_list.css("display") === 'none') {
+        if (mobile_menu_list.css("display") === "none") {
+            $(".navbar").css(
+                "background-color",
+                `rgba(255, 255, 255, ${result})`
+            );
+            $(".navbar").css(
+                "box-shadow",
+                `0px 5px 5px rgba(0, 0, 0, ${result / 2})`
+            );
 
-            $(".navbar").css("background-color", `rgba(255, 255, 255, ${result})`);
-            $(".navbar").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
-
-            $("#Foot").css("background-color", `rgba(255, 255, 255, ${result})`);
-            $("#Foot").css("box-shadow", `0px 5px 5px rgba(0, 0, 0, ${result / 2})`);
-
+            $("#Foot").css(
+                "background-color",
+                `rgba(255, 255, 255, ${result})`
+            );
+            $("#Foot").css(
+                "box-shadow",
+                `0px 5px 5px rgba(0, 0, 0, ${result / 2})`
+            );
         }
     }
 
     let mode_store = mode;
     $(".realbody").scroll(() => {
         navbarColorChange();
-        if (mode === 1) {// desktop mode
+        if (mode === 1) {
+            // desktop mode
             pageTranslate3d(".home-block", "left", "flex");
             pageTranslate3d(".resume-block", "right");
             pageTranslate3d(".services-block", "left");
@@ -136,7 +150,8 @@
             mode_store = mode;
         }
 
-        if (mode === 0) {// mobile mode
+        if (mode === 0) {
+            // mobile mode
             if (mode_store === 1) {
                 removeAttr(".home-block");
                 removeAttr(".resume-block");
@@ -145,18 +160,18 @@
             }
             mode_store = mode;
         }
-
     });
 
     function isMobileMenuShow() {
-        if (mode === 0 && mobile_menu_list.css("display") !== 'none') {
+        if (mode === 0 && mobile_menu_list.css("display") !== "none") {
             return true;
         }
         return false;
     }
 
     $(".realbody").click(() => {
-        if (isMobileMenuShow()) {// mobile mode
+        if (isMobileMenuShow()) {
+            // mobile mode
             mobile_menu_hide();
         }
     });
@@ -165,22 +180,29 @@
         $(element).removeAttr("style");
     }
 
-    function pageTranslate3d(element, direction = "right", display_mode = "inline-block") {
+    function pageTranslate3d(
+        element,
+        direction = "right",
+        display_mode = "inline-block"
+    ) {
         let scroll = $(".realbody").scrollTop();
 
         let abs_hight = abs_list[block_list[element]];
         // console.log(element, "scroll: ", scroll, "abs_hight: ", abs_hight);
         let scroll_start = scroll - abs_hight > 0 ? scroll - abs_hight : 0;
-        let scroll_deg = (scroll_start / 10) >= 90 ? 90 : (scroll_start / 10);
+        let scroll_deg = scroll_start / 10 >= 90 ? 90 : scroll_start / 10;
         let opacity = 1 - scroll_deg / 90;
-        let deg = `${(scroll_deg)}deg`;
+        let deg = `${scroll_deg}deg`;
         let tr_x = `${scroll_start}px`;
         if (direction === "left") {
-            deg = '-' + deg;
+            deg = "-" + deg;
         } else {
-            tr_x = '-' + tr_x;
-        };
-        $(element).css("transform", `translateX(${tr_x}) translateY(${scroll_start}px) rotateY(${deg})`);
+            tr_x = "-" + tr_x;
+        }
+        $(element).css(
+            "transform",
+            `translateX(${tr_x}) translateY(${scroll_start}px) rotateY(${deg})`
+        );
         $(element).css("opacity", opacity);
         if (opacity <= 0.1) {
             // display_mode = $(element).css("display");
@@ -190,7 +212,6 @@
                 $(element).css("display", display_mode);
             }
         }
-
     }
 
     /**
@@ -234,12 +255,11 @@
         color_handle = setInterval(() => {
             if (color_number === 100) {
                 color_flag = 1;
-
             }
             if (color_number === 0) {
                 color_flag = 0;
                 color_list = change_list(color_list);
-                direction_list = change_list(direction_list)
+                direction_list = change_list(direction_list);
             }
             if (color_flag === 0) {
                 color_number++;
@@ -251,7 +271,10 @@
             //     color_list = change_list(color_list);
             //     direction_list = change_list(direction_list)
             // }
-            $("body").css("background-image", `linear-gradient(${direction_list[0]}, ${color_list[0]} ${color_number}%, ${color_list[1]} 100%)`);
+            $("body").css(
+                "background-image",
+                `linear-gradient(${direction_list[0]}, ${color_list[0]} ${color_number}%, ${color_list[1]} 100%)`
+            );
             // console.log(`linear-gradient(${direction_list[0]}, ${color_list[0]} ${color_number}%, ${color_list[1]} 100%)`);
         }, 24);
 
@@ -264,7 +287,7 @@
             // console.log(audio.volume)
             audio.volume += 0.002;
             if (audio.volume > 0.9) {
-                clearInterval(handle)
+                clearInterval(handle);
             }
         }, 1);
 
@@ -274,40 +297,38 @@
         }, 500);
     }
 
-
-
     $(".nav-link__home").click(() => {
         $(".realbody").animate({
-            scrollTop: abs_list["#Home"]
-        })
+            scrollTop: abs_list["#Home"],
+        });
     });
 
     $(".nav-link__resume").click(() => {
         $(".realbody").animate({
-            scrollTop: abs_list["#Resume"]
+            scrollTop: abs_list["#Resume"],
         });
     });
 
     $(".nav-link__services").click(() => {
         $(".realbody").animate({
-            scrollTop: abs_list["#Services"]
+            scrollTop: abs_list["#Services"],
         });
     });
 
     $(".nav-link__blog").click(() => {
         $(".realbody").animate({
-            scrollTop: abs_list["#Blog"]
+            scrollTop: abs_list["#Blog"],
         });
     });
 
     $(".nav-link__contact").click(() => {
         $(".realbody").animate({
-            scrollTop: abs_list["#Contact"]
+            scrollTop: abs_list["#Contact"],
         });
     });
 
     function musicPause() {
-        count = 3000 - (new Date() - time_start) % 3000;
+        count = 3000 - ((new Date() - time_start) % 3000);
         // replaceElement("body");
         // console.log(count);
         // replaceElement(".home-block");
@@ -319,8 +340,6 @@
                 $("body").removeAttr("style");
             }
         }, 24);
-
-
 
         let handle = setInterval(() => {
             // console.log(audio.volume)
@@ -337,7 +356,6 @@
             $(".picture").removeClass("picture-music");
             count = 0;
         }, count);
-
     }
 
     let TimeFn = null;
@@ -345,7 +363,7 @@
     let doubleClick = 0;
     $(".picture").click(() => {
         // console.log("1 click");
-        clearTimeout(TimeFn)
+        clearTimeout(TimeFn);
         if (doubleClick) {
             clearTimeout(TimeDoubleFun);
         }
@@ -398,7 +416,7 @@
         TimeDoubleFun = setTimeout(() => {
             if (audio.paused && count === 0) {
                 // 暂停中
-                audio.currentTime = 0
+                audio.currentTime = 0;
                 musicPlay();
             } else {
                 // 播放中
@@ -407,22 +425,21 @@
             }
             doubleClick = 0;
         }, 300);
-
     });
 
     function loadImage(id, targetId) {
-
         let element = document.getElementById(id);
-        let targetElement = targetId ? document.getElementById(targetId) : element;
+        let targetElement = targetId
+            ? document.getElementById(targetId)
+            : element;
 
         if (element.dataset.image) {
             let img = new Image();
             img.src = element.dataset.image;
             img.onload = function () {
-                targetElement.classList.add('is-loaded');
-            }
+                targetElement.classList.add("is-loaded");
+            };
         }
-
     }
 
     let navbar_background_color;
@@ -458,13 +475,13 @@
     let windows_width_status = 0;
     let min_width = 600;
 
-    document.addEventListener('DOMContentLoaded', event => {
-        loadImage('wallpaper');
-        loadImage('pictureImage', 'picture');
+    document.addEventListener("DOMContentLoaded", (event) => {
+        loadImage("wallpaper");
+        loadImage("pictureImage", "picture");
         let offset = $("#Home").offset();
         // console.log("resume_postiton: ", offset);
         $(".realbody").animate({
-            scrollTop: $(".realbody").scrollTop() + offset.top
+            scrollTop: $(".realbody").scrollTop() + offset.top,
         });
 
         check_app_mode();
@@ -493,7 +510,6 @@
     setGreenColor("#Design");
     setGreenColor("#LightBox");
 
-
     function check_app_mode() {
         let width = window.innerWidth;
 
@@ -508,17 +524,60 @@
         } else {
             if (windows_width_status === 1) {
                 // console.log("hight to low");
-
             }
             windows_width_status = 0;
             mode = 0; // mobile mode
         }
     }
     check_app_mode();
-    window.addEventListener("resize", event => {
+    window.addEventListener("resize", (event) => {
         abs_list_init();
         check_app_mode();
     });
 
-})(jQuery);
+    function AppendZero(obj) {
+        if (obj < 10) return "0" + "" + obj;
+        else return obj;
+    }
+    function GetWeek(weeknum) {
+        switch (weeknum) {
+            case 0:
+                return "Sunday";
+            case 1:
+                return "Monday";
+            case 2:
+                return "Tuesday";
+            case 3:
+                return "Wednesday";
+            case 4:
+                return "Thursday";
+            case 5:
+                return "Friday";
+            case 6:
+                return "Saturday";
+            default:
+                break;
+        }
+    }
 
+    function GetTime() {
+        // let time_zone = (0 - new Date().getTimezoneOffset()) * 60;
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hours = date.getHours();
+        let week = GetWeek(date.getDay());
+        let minutes = AppendZero(date.getMinutes());
+        let seconds = AppendZero(date.getSeconds());
+
+        let result = `${year} - ${month} - ${day}     ${hours} : ${minutes} : ${seconds}    ${week}`;
+
+        return result;
+    }
+
+    setInterval(() => {
+        $(".time").text(GetTime());
+        // console.log(GetTime());
+    }, 100);
+})(jQuery);
