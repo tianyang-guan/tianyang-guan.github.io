@@ -48,10 +48,10 @@ function initMap() {
 
 async function sendPos() {
     let str = new Request(
-        `http://127.0.0.1:3000/weatherpos/${pos.lat}/${pos.lng}`
+        `https://aitopcoder.com:3001/weatherpos/${pos.lat}/${pos.lng}`
     );
     console.log(str);
-    let response = await fetch(str, { mode: "no-cors" });
+    let response = await fetch(str);
     let result = await response.json();
     console.log(result);
 }
