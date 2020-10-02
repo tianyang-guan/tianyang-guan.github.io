@@ -57,7 +57,7 @@ async function sendPos() {
     );
     // console.log(str);
     let response = await fetch(str);
-    let result = await response.body();
+    let result = await response.json();
     console.log(result);
 }
 
