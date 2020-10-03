@@ -1099,13 +1099,8 @@ iframe {
         max-width: 600px;
     }
 }
-// @media screen and (max-width: 1400px) {
-//     .temp-humi-flex {
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//     }
-// }
+@media screen and (max-height: 1000px) {
+}
 
 @media screen and (min-width: 800px) {
     .content {

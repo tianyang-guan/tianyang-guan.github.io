@@ -525,17 +525,25 @@
                 navbarColorChange();
             }
             windows_width_status = 1;
+            mode = 1; // desktop mode
         } else {
             if (windows_width_status === 1) {
                 // console.log("hight to low");
             }
             windows_width_status = 0;
+            mode = 0; // mobile mode
         }
 
         if (width >= 1005 && hight >= 1000) {
-            mode = 1; // desktop mode
+            document.getElementsByTagName("body")[0].style.zoom = 1;
+        } else if (width >= 800 && hight >= 800) {
+            document.getElementsByTagName("body")[0].style.zoom = 0.9;
+        } else if (width >= 700 && hight >= 700) {
+            document.getElementsByTagName("body")[0].style.zoom = 0.8;
+        } else if (width >= 600 && hight >= 600) {
+            document.getElementsByTagName("body")[0].style.zoom = 0.7;
         } else {
-            mode = 0; // mobile mode
+            document.getElementsByTagName("body")[0].style.zoom = 1;
         }
     }
     check_app_mode();
@@ -543,7 +551,6 @@
         abs_list_init();
         check_app_mode();
     });
-
     function AppendZero(obj) {
         if (obj < 10) return "0" + "" + obj;
         else return obj;
