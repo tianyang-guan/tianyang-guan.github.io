@@ -1158,6 +1158,26 @@ iframe:hover {
     transform: scale(1);
   }
 }
+@keyframes zoomUp {
+  from {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+@keyframes zoomDown {
+  from {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
 @keyframes pureRotation {
   from {
     transform: rotate(0deg);
@@ -1283,6 +1303,16 @@ iframe:hover {
 .wallpaper.is-loaded {
   animation-delay: 1000ms;
   animation-name: zoomOut;
+}
+
+.backimg-up {
+  animation-duration: 3000ms;
+  animation-name: zoomUp;
+}
+
+.backimg-down {
+  animation-duration: 3000ms;
+  animation-name: zoomDown;
 }
 
 .picture.is-loaded .picture-shadow {

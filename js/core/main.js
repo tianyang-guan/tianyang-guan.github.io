@@ -236,7 +236,9 @@
     let count = 0;
     let time_start = 0;
     let color_handle;
+    let backimg_handle;
     let color_number = 0;
+    let backimg_number = 1;
     function musicPlay() {
         clearInterval(color_handle);
         $(".picture").removeClass("picture-music-back");
@@ -281,10 +283,6 @@
             );
             // console.log(`linear-gradient(${direction_list[0]}, ${color_list[0]} ${color_number}%, ${color_list[1]} 100%)`);
         }, 24);
-
-        // replaceElement(".home-block");
-
-        // $(".home-block").css("background-color", "rgba(255, 255, 255, 0.1)");
 
         audio.volume = 0;
         let handle = setInterval(() => {
@@ -413,6 +411,33 @@
         }, 300);
     }
 
+    BackimgAnimations();
+
+    function BackimgAnimations() {
+        let findLoad = setInterval(() => {
+            if (loadFlag) {
+                clearInterval(findLoad);
+                setTimeout(() => {
+                    $("#wallpaper").removeClass("is-loaded");
+                    $("#wallpaper").addClass("backimg-down");
+                    backimg_handle = setInterval(() => {
+                        if (backimg_number === 1.05) {
+                            backimg_number = 1;
+                            console.log(1);
+                            $("#wallpaper").removeClass("backimg-up");
+                            $("#wallpaper").addClass("backimg-down");
+                        } else {
+                            backimg_number = 1.05;
+                            console.log(1.05);
+                            $("#wallpaper").removeClass("backimg-down");
+                            $("#wallpaper").addClass("backimg-up");
+                        }
+                    }, 3200);
+                }, 3000);
+            }
+        }, 100);
+    }
+
     $(".picture").dblclick(() => {
         // console.log("2 click");
         clearTimeout(TimeFn);
@@ -431,6 +456,7 @@
         }, 300);
     });
 
+    let loadFlag = 0;
     function loadImage(id, targetId) {
         let element = document.getElementById(id);
         let targetElement = targetId
@@ -442,6 +468,7 @@
             img.src = element.dataset.image;
             img.onload = function () {
                 targetElement.classList.add("is-loaded");
+                loadFlag = 1;
             };
         }
     }
