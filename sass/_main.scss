@@ -892,6 +892,27 @@ iframe {
     padding-bottom: 24rem;
 }
 
+* {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.05);
+        transition: background-color 0.3s;
+
+        &:hover {
+            background: hsla(263, 93%, 48%, 0.747);
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+    }
+}
+
 @media screen and (max-width: 599px) {
     .content {
         flex-direction: column;
@@ -947,6 +968,8 @@ iframe {
     }
     .resume-element-small {
         width: unset;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     // #Home,
@@ -961,6 +984,10 @@ iframe {
         padding: 0;
         max-width: 375px;
         transform: scale(0.9);
+    }
+
+    .blog-block {
+        max-width: 335px;
     }
 
     #Home {
@@ -1016,6 +1043,29 @@ iframe {
         }
     }
 
+    .resume-element-small {
+        width: unset;
+    }
+
+    .weather,
+    .blog-context-body,
+    .blog-block,
+    .services-block,
+    .resume-block,
+    .services-body,
+    .rseume-body {
+        margin: 0;
+        padding: 0;
+        max-width: 400px;
+        transform: scale(0.9);
+    }
+
+    .services-description {
+        max-width: 400px;
+        margin: 0;
+        padding: 0;
+    }
+
     .side {
         margin-bottom: 3rem;
         width: 100%;
@@ -1031,14 +1081,29 @@ iframe {
         justify-content: center;
         align-items: center;
     }
-}
-@media screen and (max-width: 1400px) {
-    .temp-humi-flex {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+    .blog-context-body,
+    .blog-block,
+    .services-block,
+    .resume-block,
+    .services-body,
+    .rseume-body {
+        margin: 0;
+        padding: 0;
+        // max-width: 600px;
+        // transform: scale(0.5);
+    }
+    .services-description {
+        max-width: 600px;
     }
 }
+// @media screen and (max-width: 1400px) {
+//     .temp-humi-flex {
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
+// }
 
 @media screen and (min-width: 800px) {
     .content {
