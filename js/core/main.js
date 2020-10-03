@@ -516,6 +516,7 @@
 
     function check_app_mode() {
         let width = window.innerWidth;
+        let hight = window.innerHeight;
 
         if (width >= 600) {
             if (windows_width_status === 0) {
@@ -524,12 +525,16 @@
                 navbarColorChange();
             }
             windows_width_status = 1;
-            mode = 1; // desktop mode
         } else {
             if (windows_width_status === 1) {
                 // console.log("hight to low");
             }
             windows_width_status = 0;
+        }
+
+        if (width >= 1005 && hight >= 1000) {
+            mode = 1; // desktop mode
+        } else {
             mode = 0; // mobile mode
         }
     }
