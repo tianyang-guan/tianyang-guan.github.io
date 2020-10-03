@@ -861,12 +861,12 @@ iframe:hover {
 }
 
 *::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  max-width: 3px;
+  max-height: 8px;
 }
 *::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.15);
   transition: background-color 0.3s;
 }
 *::-webkit-scrollbar-thumb:hover {
