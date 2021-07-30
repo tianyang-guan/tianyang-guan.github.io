@@ -423,12 +423,12 @@
                     backimg_handle = setInterval(() => {
                         if (backimg_number === 1.05) {
                             backimg_number = 1;
-                            console.log(1);
+//                             console.log(1);
                             $("#wallpaper").removeClass("backimg-up");
                             $("#wallpaper").addClass("backimg-down");
                         } else {
                             backimg_number = 1.05;
-                            console.log(1.05);
+//                             console.log(1.05);
                             $("#wallpaper").removeClass("backimg-down");
                             $("#wallpaper").addClass("backimg-up");
                         }
