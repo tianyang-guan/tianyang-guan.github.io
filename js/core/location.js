@@ -75,7 +75,7 @@ async function sendPos(pos, geocoder) {
             return;
         }
         let str = new Request(
-            `https://aitopcoder.com:3001/weatherpos/${pos.lat}/${pos.lng}`,
+            `https://limitless-anchorage-50135.herokuapp.com/weatherpos/${pos.lat}/${pos.lng}`,
             { method: "GET" }
         );
 
